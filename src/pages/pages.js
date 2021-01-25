@@ -29,6 +29,33 @@ export default function() {
             img:'https://i.vimeocdn.com/video/903170763_640x360.jpg?r=pad',
             src:"https://player.vimeo.com/video/279453846?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
             lock:false
+        },
+        {
+            id: 13,
+            link:'/video/2',
+            name:'Mana Pools NP, Africa - Short Preview',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/903170763_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453846?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
+        },
+        {
+            id: 12,
+            link:'/video/2',
+            name:'Mana Pools NP, Africa - Short Preview',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/903170763_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453846?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
+        },
+        {
+            id: 11,
+            link:'/video/2',
+            name:'Mana Pools NP, Africa - Short Preview',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/903170763_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453846?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
         }
     ]
   },
@@ -54,6 +81,34 @@ export default function() {
             img:'https://i.vimeocdn.com/video/904331665_640x360.jpg?r=pad',
             src:"https://player.vimeo.com/video/279244319?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
             lock:false
+        },
+        {
+            id: 5,
+            link:'/video/1',
+            name:'Sounds of the Pacific Ocean',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/904471770_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279246423?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
+
+        },{
+            id: 6,
+            link:'/video/1',
+            name:'Sounds of the Pacific Ocean',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/904471770_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279246423?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
+
+        },{
+            id: 7,
+            link:'/video/1',
+            name:'Sounds of the Pacific Ocean',
+            time:'00:03:00',
+            img:'https://i.vimeocdn.com/video/904471770_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279246423?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:false
+
         }
     ]
   },
@@ -79,6 +134,36 @@ export default function() {
             img:'https://i.vimeocdn.com/video/903165113_640x360.jpg?r=pad',
             src:"https://player.vimeo.com/video/279100065?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
             lock:true
+        },
+        {
+            id:8,
+            link:'/video/5',
+            name:'Bryce Canyon- Short Preview',
+            time:'00:02:36',
+            img:'https://i.vimeocdn.com/video/821569414_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453831?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:true
+
+        },
+        {
+            id:9,
+            link:'/video/5',
+            name:'Bryce Canyon- Short Preview',
+            time:'00:02:36',
+            img:'https://i.vimeocdn.com/video/821569414_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453831?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:true
+
+        },
+        {
+            id:10,
+            link:'/video/5',
+            name:'Bryce Canyon- Short Preview',
+            time:'00:02:36',
+            img:'https://i.vimeocdn.com/video/821569414_640x360.jpg?r=pad',
+            src:"https://player.vimeo.com/video/279453831?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=93675",
+            lock:true
+
         }
     ]
 }
