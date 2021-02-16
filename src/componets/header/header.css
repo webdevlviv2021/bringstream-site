@@ -1,5 +1,5 @@
 .header {
-    background: #3a3838;
+    background: rgba(0,0,0,.8);;
     width: 100%;
 }
 
@@ -11,6 +11,11 @@
     
 }
 
+.header-content img {
+    padding-bottom: 35px;
+    
+    
+}
 .header-content nav ul {
     display: flex;
     justify-content: space-around;
@@ -39,4 +44,7 @@
     border-radius: 10px;
     background: #b7ca00;
     padding: 10px;
+}
+span {
+    color: #fff;
 }

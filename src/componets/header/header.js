@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header-content">
-        <img src={logo} alt="logo" width={260} />
+        <img src={logo} alt="logo" width={220}/>
                 <nav >
                     <ul>
                         <li>Home</li>
@@ -16,8 +16,10 @@ const Header = () => {
                 </nav>
                     
                 <div>
-                    <span>1</span>
-                    <span>2</span>
+                    <span>AVAILABLE ON
+
+</span>
+                    <span><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i class="fab fa-apple"></i></a></span>
                     <span>3</span>
                     <span>4</span>
                 </div>
