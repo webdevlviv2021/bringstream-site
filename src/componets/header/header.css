@@ -12,7 +12,7 @@
 }
 
 .header-content img {
-    padding-bottom: 35px;
+    margin-bottom: 40px;
     
     
 }
@@ -40,11 +40,26 @@
 }
 
 .login-box a:nth-child(2) {
-    margin-left: 20px;
-    border-radius: 10px;
+    margin-left: 16px;
+    border-radius: 4px;
     background: #b7ca00;
-    padding: 10px;
+    padding: 5px 14px;  
+    font-size: 16px;
+    
 }
 span {
     color: #fff;
+}
+.fa-android::before {
+    content: url('https://api.iconify.design/ant-design:android-filled.svg?height=30&color=white');
+}
+.fa-apple::before {
+    content: url('https://api.iconify.design/ant-design:apple-filled.svg?height=30&color=white');
+
+}
+.fa-amazon::before {
+    content: url('https://api.iconify.design/foundation:social-amazon.svg?height=35&color=white');
+}
+.fa-roku::before {
+    content: url('https://api.iconify.design/simple-icons:roku.svg?height=70&color=white');
 }
