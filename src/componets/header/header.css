@@ -1,6 +1,7 @@
 .header {
     background: rgba(0,0,0,.8);;
     width: 100%;
+    margin-bottom: 35px;
 }
 
 .header-content {
@@ -28,6 +29,7 @@
     margin-left: 19px;
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
+    cursor: pointer;
 }
 
 .login-box {
@@ -47,7 +49,7 @@
     font-size: 16px;
     
 }
-span {
+.header-text {
     color: #fff;
 }
 .fa-android::before {

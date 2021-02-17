@@ -3285,9 +3285,11 @@ input.cart-cvv1::placeholder {
 
 .playlists-scrollbox
 {
-    padding-left: 25px !important;
-    padding-right: 0px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
 }
+
+
 
 
 

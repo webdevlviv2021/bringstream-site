@@ -9,7 +9,7 @@ const Explore = (props) => {
     const $=window.jQuery;
    
     return (
-        <div style={{paddingLeft:"0 !important",paddingRight:"0 !important"}}>
+        <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 <OwlCarousel items={1} className='my-carousel owl-theme  owl-carousel owl-loaded owl-drag' loop margin={10} nav  >
     <div className="my-item" style={{"backgroundImage":"url('https://i.vimeocdn.com/video/904334858_1920x1080.jpg?r=pad')"}}>
         <div className="overlay-item"></div>
@@ -38,8 +38,8 @@ const Explore = (props) => {
     </div>
 </OwlCarousel>
 <Slickplaylists playlists={props.plst}/>
-    <div style={{paddingLeft:"25px",paddingRight:15}}>
-<div class="col-md-11 col-sm-10 playlists-scrollbox">
+    <div >
+<div class=" playlists-scrollbox">
         <PlaylistView playlists={props.plst}/>
         </div>
     </div>
