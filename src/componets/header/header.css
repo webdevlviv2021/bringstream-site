@@ -8,11 +8,11 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
 }
 
 .header-content img {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     
     
 }
@@ -31,7 +31,7 @@
 }
 
 .login-box {
-    margin-top: 35px;
+    /* margin-top: 35px; */
     font-size: 22px;
     color: #fff;    
     font-weight: 500;
@@ -62,4 +62,14 @@ span {
 }
 .fa-roku::before {
     content: url('https://api.iconify.design/simple-icons:roku.svg?height=70&color=white');
+}
+
+.header-content-icons {
+    display: flex;
+    align-items: center;
+
+}
+
+.logoimg {
+    margin: auto;
 }

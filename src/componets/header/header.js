@@ -6,7 +6,9 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header-content">
-        <img src={logo} alt="logo" width={220}/>
+            <div style={{display: 'flex'}}>
+        <img className="logoimg" src={logo} alt="logo" width={220}/>
+        </div>
                 <nav >
                     <ul>
                         <li>Home</li>
@@ -15,10 +17,8 @@ const Header = () => {
                     </ul>
                 </nav>
                     
-                <div>
-                    <span>AVAILABLE ON
-
-</span>
+                <div class="header-content-icons">
+                    <span>AVAILABLE ON</span>
                     <span><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i class="fab fa-apple"></i></a></span>
                     <span><i class="fa fa-android"></i></span>
                     <span><i class="fa fa-amazon"></i></span>
