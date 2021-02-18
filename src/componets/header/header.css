@@ -2,6 +2,7 @@
     background: rgba(0,0,0,.8);;
     width: 100%;
     margin-bottom: 35px;
+    font-family: oswald;
 }
 
 .header-content {
@@ -70,6 +71,10 @@
     display: flex;
     align-items: center;
 
+}
+.fa-play-circle {
+    content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
+    
 }
 
 .logoimg {
