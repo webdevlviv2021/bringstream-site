@@ -74,11 +74,11 @@
 }
 .fa-play-circle {
     content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
-    
+    vertical-align: -0.125em;
 }
-.startFree {
-    font-size: 18px;
-}
+
+
+
 
 .logoimg {
     margin: auto;

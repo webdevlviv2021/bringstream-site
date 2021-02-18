@@ -27,7 +27,7 @@ const Header = () => {
                 </div>
 
                 <div className="login-box">
-                <i class="fa fa-play-circle"></i>
+                <i class="fa fa-play-circle playItem"></i>
                     <a className='startFree'>START FREE TRIAL!</a>
                     <a >LOG IN</a>
                 </div>
