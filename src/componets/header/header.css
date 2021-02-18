@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.login-box a:nth-child(2) {
+.login-box a:nth-child(3) {
     margin-left: 16px;
     border-radius: 4px;
     background: #b7ca00;
@@ -75,6 +75,9 @@
 .fa-play-circle {
     content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
     
+}
+.startFree {
+    font-size: 18px;
 }
 
 .logoimg {
