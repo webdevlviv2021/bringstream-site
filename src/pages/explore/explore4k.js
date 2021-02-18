@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import PlaylistCarousel from '../../componets/playlistcarousel/playlistcarousel';
 import PlaylistView from '../../componets/playlistview/playlistview';
 import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
+
 const Explore = (props) => {
     const $=window.jQuery;
-   
+
+const [filterplst, setFilterplst] = useState(props.plst);
+var filteredplaylists=[];
     return (
         <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 <OwlCarousel items={1} className='my-carousel owl-theme  owl-carousel owl-loaded owl-drag' loop margin={10} nav  >
@@ -37,10 +40,33 @@ const Explore = (props) => {
         <a href="/playlist-wildlife-videos-4k-4k-hdr-27" className="box-i-star ">Watch now</a>
     </div>
 </OwlCarousel>
+<div className="search-div">
+            <span>
+                <img src="/img/search.svg" alt=""/>
+                <input type="text" id="search_video" name="search_video" placeholder="Search video" onChange={(event)=>{
+         
+                    console.log(filterplst);
+                      let searchString = event.target.value;
+                      console.log(searchString);
+                      for(var i=0;i<props.plst.length;i++)
+                      {
+
+                          var newArray = props.plst[i].videos.filter(function (el) {
+                            return el.name == searchString;
+                            });
+                            filterplst[i].videos=newArray;
+
+                      }
+       console.log(filterplst);
+       }
+       }
+       /> 
+            </span>
+        </div>
 <Slickplaylists playlists={props.plst}/>
     <div >
 <div class=" playlists-scrollbox">
-        <PlaylistView playlists={props.plst}/>
+        <PlaylistView playlists={filterplst}/>
         </div>
     </div>
 </div>
