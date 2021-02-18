@@ -3289,6 +3289,29 @@ input.cart-cvv1::placeholder {
     padding-right: 50px !important;
 }
 
+.c-item-style:before {
+    content:"";
+    display:none;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.7);
+    opacity: 1;
+  }
+
+  .c-item-style.newoverlay:before {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.7);
+    opacity: 1;
+  }
 
 
 

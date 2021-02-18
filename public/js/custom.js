@@ -126,10 +126,11 @@ $(document).ready(function () {
 
 $(".owl-carousel-c .owl-next").hover(function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").last().fadeTo( "fast", 0.2 );
-});
-$(".owl-carousel-c .owl-next").mouseout(function(){
+},
+function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").last().fadeTo( "fast", 1 );
 });
+
 $(".owl-carousel-c .owl-next").click(function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().not(".center").children(".owl-item.active").fadeTo( "fast", 1 );
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").last().fadeTo( "fast", 0.2 );
@@ -137,14 +138,24 @@ $(".owl-carousel-c .owl-next").click(function(){
 
 $(".owl-carousel-c .owl-prev").hover(function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").first().prev().fadeTo( "fast", 0.2);
-});
-$(".owl-carousel-c .owl-prev").mouseout(function(){
+},
+function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").first().prev().fadeTo( "fast", 1 );
 });
+
 $(".owl-carousel-c .owl-prev").click(function(){
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().not(".center").children(".owl-item").fadeTo( "fast", 1 );
    $(this).parent().parent().children(".owl-stage-outer").first().children().first().children(".owl-item.active").not(".center").first().prev().fadeTo( "fast", 0.2);
 });
+
+$(".c-item-style").hover(function(){
+    $(this).addClass("newoverlay");
+},
+function(){
+    $(this).removeClass("newoverlay");
+});
+
+
 
 
 
