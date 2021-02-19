@@ -5,7 +5,7 @@ import Explore from '../pages/explore/explore4k';
 import Video from '../pages/video/video';
 import Playlists from '../pages/playlist/playlists';
 
-export default function() {
+export default function Pl() {
      const plst = [
   {
     link: '/playlist/1',
@@ -1688,7 +1688,9 @@ export default function() {
                         render={(props) => (
                             <Explore plst={plst} />
             )} />
-            <Route exact path='/playlist' component={Playlists} />
+            <Route exact path='/playlist/:id' render={(props) => (
+                            <Playlists {...props} plst={plst} />
+            )} />
              <Route exact path='/video/:id'  render={(props) => (
                             <Video {...props} plst={plst} />
             )} />

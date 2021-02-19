@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.header-content nav ul li a{
+   color: white;
+}
+
 .login-box {
     /* margin-top: 35px; */
     font-size: 22px;

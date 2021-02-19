@@ -1,7 +1,9 @@
 import React from 'react'
 import './header.css'
-import logo from '../../assets/image/logo.png'
-
+import logo from '../../assets/image/logo.png';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+//import { Explore} from "../../pages/explore/explore4k";
 const Header = () => {
     return (
         <div className="header">
@@ -11,9 +13,10 @@ const Header = () => {
         </div>
                 <nav >
                     <ul>
-                        <li>Home</li>
-                        <li>About us</li>
-                        <li>Explore</li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/explore">EXPLORE</a></li>
+                       
                     </ul>
                 </nav>
                     

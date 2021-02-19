@@ -2284,7 +2284,7 @@ a.box2-i-more {
 .box2-i-more{
     font-weight: 500;
     text-transform: uppercase;
-    color: #C4D700 !important
+    color: #C4D700 !important;
         background: transparent;
     border: 2px solid #fff;
     border-radius: 4px;
