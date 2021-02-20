@@ -38,7 +38,7 @@
    02. GENERAL STYLE
 ========================================================================== */ 
 body {
-    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-family: 'Oswald', Helvetica, Arial, sans-serif !important;
     /*font-family: "Raleway", sans-serif;*/
     font-size: 16px;
     line-height: 20px;

@@ -16,8 +16,12 @@ const [filterplstsc, setFilterplstsc] = useState(filterplst);
 const [isSearch, setIsSearch] = useState(false);
 var filteredplaylists=[];
     return (
-        <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
+       <React.Fragment> 
+       <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 <OwlCarouselMain/>
+<div class="descr">
+    <p>Largest collection of 4K &amp; 4K HDR videos for relaxation! <span>1.476</span> hours &amp; <span>899</span> videos for your home and business! <span>New content is added REGULARLY!</span></p>
+</div>
 <div className="search-div">
             <span>
                 <img src="/img/search.svg" alt=""/>
@@ -67,6 +71,34 @@ if(event.target.value!='' && event.target.value!=null){
 )}
 </div>
 </div>
+<section className="main-sign-up">
+     <div className="signup-text">
+          <h5>Love the Earth – Relax with Nature!</h5>
+          <p>Behold the beauty of nature! <b>Relax and restore yourself together with 4K Nature Relax TV.</b> Experience the majestic landscapes, enjoy the stunning views of the mountains, explore the diverse wildlife, listen to the soothing sounds of the rushing waterfalls and calm lakes, enjoy birds singing in the deep forests and more. <b>4K Relax TV brings peace and restores your inner peace and harmony in your life!</b></p>
+          <a href="subscription" className="button">Sign Up Now</a>
+     </div>
+
+</section>
+<div className="under-footer">
+<div className="more-inform my-2 my-lg-0">
+<p className="footer-follow"></p><h6>Available on multiple devices.</h6><p></p>
+     <div className="social">
+        
+
+          <a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><img src="/img/platforms/android.png" alt="android app"/></a>
+          <a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8" target="_blank" rel="nofollow"><img src="/img/platforms/iphone.png" alt="iphone app"/></a>
+          <a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><img src="/img/platforms/roku.png" alt="roku app"/></a>
+          <a href="#" rel="nofollow"><img src="/img/platforms/samsung-smart-tv.png" alt="roku app"/></a>
+<br/><br/>
+          <a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><img src="/img/platforms/android-tv.png" alt="android tv"/></a>
+          <a href="https://apps.apple.com/us/app/4k-nature-relax-tv/id1403683336#?platform=appleTV" target="_blank" rel="nofollow"><img src="/img/platforms/apple-tv.png" alt="apple tv"/></a>
+          <a href="https://www.amazon.com/Pro-Art-inc-Nature-Relax/dp/B074MC1G9X" target="_blank" rel="nofollow"><img src="/img/platforms/fire-tv.png" alt="amazon fire tv"/></a>
+          
+
+     </div>
+</div>
+    </div>
+</React.Fragment>
     )
 }
 
