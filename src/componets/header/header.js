@@ -20,12 +20,12 @@ const Header = () => {
                     </ul>
                 </nav>
                     
-                <div className="header-content-icons">
+                <div className="header-content-icons navstyle">
                     <span className="header-text">AVAILABLE ON</span>
-                    <span><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i className="fab fa-apple"></i></a></span>
-                    <span><i className="fa fa-android"></i></span>
-                    <span><i className="fa fa-amazon"></i></span>
-                    <span><i className="fa fa-roku"></i></span>
+                    <span className="socialicon"><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i className="fab fa-apple"></i></a></span>
+                    <span className="socialicon"><i className="fa fa-android"></i></span>
+                    <span className="socialicon"><i className="fa fa-amazon"></i></span>
+                    <span className="socialicon"><i className="fa fa-roku"></i></span>
 
                 </div>
 
