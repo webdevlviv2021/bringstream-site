@@ -78,7 +78,7 @@
 }
 .fa-play-circle {
     content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
-    vertical-align: -0.125em;
+    vertical-align: -0.25em;
 }
 
 
@@ -86,4 +86,8 @@
 
 .logoimg {
     margin: auto;
+}
+
+.navstyle{
+    margin-right:200px;
 }

@@ -1774,7 +1774,7 @@ p {
 
 }
 .playlists-s {
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .footer-plalist{
@@ -3340,8 +3340,10 @@ button, input, optgroup, select, textarea {
     margin-right: 25px;
 }
 .search-div {
-    padding: 20px;
+   
     text-align: right;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
 }
 
 .search-div span img {
@@ -3352,7 +3354,11 @@ button, input, optgroup, select, textarea {
     transform: translateY(-50%);
 }
 
-
+.container {
+    max-width: 91%!important;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
 
 

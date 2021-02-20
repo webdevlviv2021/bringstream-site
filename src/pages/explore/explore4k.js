@@ -7,7 +7,7 @@ import PlaylistCarousel from '../../componets/playlistcarousel/playlistcarousel'
 import PlaylistView from '../../componets/playlistview/playlistview';
 import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviewsecond';
 import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
-
+import "./explore4k.css";
 const Explore = (props) => {
     const $=window.jQuery;
 var [filterplst, setFilterplst] = useState([]);
@@ -22,7 +22,8 @@ var filteredplaylists=[];
 <div class="descr">
     <p>Largest collection of 4K &amp; 4K HDR videos for relaxation! <span>1.476</span> hours &amp; <span>899</span> videos for your home and business! <span>New content is added REGULARLY!</span></p>
 </div>
-<div className="search-div">
+<div className="mm justify-content-center">
+<div className=" search-div col-md-11 mw " align="center">
             <span>
                 <img src="/img/search.svg" alt=""/>
                 <input type="text" id="search_video" name="search_video" placeholder="Search video" onChange={(event)=>{
@@ -53,6 +54,7 @@ if(event.target.value!='' && event.target.value!=null){
        /> 
             </span>
         </div>
+</div>
 <Slickplaylists playlists={props.plst}/>
 <div >
 {isSearch ? (
@@ -70,6 +72,8 @@ if(event.target.value!='' && event.target.value!=null){
     
 )}
 </div>
+
+
 </div>
 <section className="main-sign-up">
      <div className="signup-text">

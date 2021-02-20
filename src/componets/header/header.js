@@ -11,7 +11,7 @@ const Header = () => {
             <div style={{display: 'flex'}}>
         <img className="logoimg" src={logo} alt="logo" width={220}/>
         </div>
-                <nav >
+                <nav className="navstyle">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About us</a></li>
