@@ -156,6 +156,20 @@ function(){
 });
 
 
+// $(".login-box").hover(function(){
+//     $(".fa-play-circle").css("content","url(https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=%23c4d700)");
+//     $(".startFree").css("color","#c4d700");
+// },
+// function(){
+//    $(".fa-play-circle").css("content","url(https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white)");
+//     $(".startFree").css("color","white");
+// });
+
+
+
+
+
+
 
 
 

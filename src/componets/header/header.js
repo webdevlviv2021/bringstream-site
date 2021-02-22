@@ -11,21 +11,21 @@ const Header = () => {
             <div style={{display: 'flex'}}>
         <img className="logoimg" src={logo} alt="logo" width={220}/>
         </div>
-                <nav className="navstyle">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About us</a></li>
-                        <li><a href="/explore">EXPLORE</a></li>
+                <nav className="navstyle mr-auto">
+                    <ul className="menuul ">
+                        <li><a href="/" className="nav-link">Home</a></li>
+                        <li><a href="/about" className="nav-link">About us</a></li>
+                        <li><a href="/explore" className="nav-link">EXPLORE</a></li>
                        
                     </ul>
                 </nav>
                     
-                <div className="header-content-icons">
+                <div className="header-content-icons mr-auto">
                     <span className="header-text">AVAILABLE ON</span>
-                    <span className="socialicon"><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i className="fab fa-apple"></i></a></span>
-                    <span className="socialicon"><i className="fa fa-android"></i></span>
-                    <span className="socialicon"><i className="fa fa-amazon"></i></span>
-                    <span className="socialicon"><i className="fa fa-roku"></i></span>
+                    <span className="socialicon faapple"><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8"><i className="fab fa-apple"></i></a></span>
+                    <span className="socialicon faandroid"><a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><i className="fa fa-android"></i></a></span>
+                    <span className="socialicon"><a href="https://www.amazon.com/Pro-Art-inc-Nature-Relax/dp/B074MC1G9X" target="_blank" rel="nofollow"><i className="fa fa-amazon"></i></a></span>
+                    <span className="socialicon"><a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><i className="fa fa-roku"></i></a></span>
 
                 </div>
 
