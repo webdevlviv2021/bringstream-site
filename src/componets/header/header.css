@@ -63,17 +63,17 @@
     color: #fff;
 }
 .fa-android::before {
-    content: url('https://api.iconify.design/ant-design:android-filled.svg?height=30&color=white');
+    /* content: url('https://api.iconify.design/ant-design:android-filled.svg?height=30&color=white'); */
 }
 .fa-apple::before {
-    content: url('https://api.iconify.design/ant-design:apple-filled.svg?height=30&color=white');
+    /* content: url('https://api.iconify.design/ant-design:apple-filled.svg?height=30&color=white'); */
 
 }
 .fa-amazon::before {
-    content: url('https://api.iconify.design/foundation:social-amazon.svg?height=35&color=white');
+    /* content: url('https://api.iconify.design/foundation:social-amazon.svg?height=35&color=white'); */
 }
 .fa-roku::before {
-    content: url('https://api.iconify.design/simple-icons:roku.svg?height=70&color=white');
+    /* content: url('https://api.iconify.design/simple-icons:roku.svg?height=70&color=white'); */
 }
 
 .header-content-icons {
@@ -82,8 +82,8 @@
 
 }
 .fa-play-circle {
-    content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
-    vertical-align: -0.25em;
+    /* content: url('https://api.iconify.design/ic:sharp-play-circle.svg?height=27&color=white');
+    vertical-align: -0.25em; */
 }
 
 

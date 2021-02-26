@@ -142,7 +142,7 @@ body {
 }
 .item-style-play:after{
     font-family: FontAwesome;
-    content: url('https://api.iconify.design/fa-play-circle-o.svg?height=30&color=white');
+    /* content: url('https://api.iconify.design/fa-play-circle-o.svg?height=30&color=white'); */
   
     position: absolute;
     color: #fff;
@@ -156,7 +156,7 @@ body {
     font-size: 30px;/*fixed terry bylo 55px*/
 }
 .fa-play-circle-o::before{
-    content: url('https://api.iconify.design/fa-play-circle-o.svg?height=25&color=%23c4d700')!important;
+    /* content: url('https://api.iconify.design/fa-play-circle-o.svg?height=25&color=%23c4d700')!important; */
 }
 
 
