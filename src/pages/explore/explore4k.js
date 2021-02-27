@@ -19,7 +19,7 @@ var filteredplaylists=[];
        <React.Fragment> 
        <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 <OwlCarouselMain/>
-<div class="descr">
+<div className="descr">
     <p>Largest collection of 4K &amp; 4K HDR videos for relaxation! <span>1.476</span> hours &amp; <span>899</span> videos for your home and business! <span>New content is added REGULARLY!</span></p>
 </div>
 <div className="mm justify-content-center">

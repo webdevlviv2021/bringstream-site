@@ -125,7 +125,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
     
 </section>               </li>
                <li className="" style={{"display":"none"}}>
-<div class="content__wrapper">
+<div className="content__wrapper">
                <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 
 <div className="mm justify-content-center">
