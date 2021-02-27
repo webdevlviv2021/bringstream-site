@@ -1340,8 +1340,15 @@ input:focus ~ .highlight {
     margin-bottom: 30px;    
     height: 300px;/*-bylo 237--*/
 }
+.item-list-adv {
+     margin-bottom:12px;     
+    height: auto;/*-bylo 237--*/
+}
 .videos-list{
     /*height: 191px;*/
+}
+.videos-list-adv{
+    height: 191px;
 }
 .bottom-show{
     text-align: center;

@@ -115,6 +115,105 @@ $(document).ready(function () {
         }
     });
 
+
+var owl2 = $('.owl-carousel-c-second');
+    owl2.owlCarousel({
+        nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+         responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }
+    });
+
+    var owl3 = $('.owl-carousel-c-third');
+    owl3.owlCarousel({
+        nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+         responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }
+    });
+
+    var owl4 = $('.owl-carousel-c-fourth');
+    owl4.owlCarousel({
+        nav:true,
+        center:false,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+         responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }
+    });
     
       $(".my-carousel").owlCarousel({
         nav:true,

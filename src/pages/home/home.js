@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Home = () => {
+import PlaylistViewThird from '../../componets/playlistviewthird/playlistviewthird';
+import PlaylistViewFourth from '../../componets/playlistviewfourth/playlistviewfourth';
+import NewestUploads from '../../componets/newestuploads/newestuploads';
+import PlaylistCarousel from '../../componets/playlistcarousel/playlistcarousel';
+import PlaylistView from '../../componets/playlistview/playlistview';
+import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviewsecond';
+import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
+const Home = (props) => {
     const $=window.jQuery;
+    var [filterplst, setFilterplst] = useState([]);
+filterplst=[props.plst[0],props.plst[1],props.plst[2]];
+var [threeplst, setThreeplst] = useState([]);
+threeplst =[props.plst[0],props.plst[1],props.plst[2]];
+const [filterplstsc, setFilterplstsc] = useState(filterplst);
+const [isSearch, setIsSearch] = useState(false);
+var filteredplaylists=[];
     return (
         <div>
             <header className="top_header ha-waypoint ha-header-small header35">
@@ -91,7 +105,8 @@ const Home = () => {
                  <section className="free-preview" style={{"backgroundImage":"url('https://i.vimeocdn.com/video/904334858_640x360.jpg?r=pad')","display":"block"}}>
     <div className="free-preview-bg">
         <div className="fp-slider">
-            <div id="small_carousel"></div>
+          
+            <PlaylistViewFourth playlists={[props.plst[0]]}/>
         </div>
         <div className="fp-text">
                         <h5>FREE PREVIEW - <span id="free_preview_name">Hoh Rain Forest</span></h5>
@@ -104,89 +119,70 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 
 <section className="carousel-block" style={{"display":"block"}}>
         <div className="col-md-11 col-sm-10">
-        <div className="item-list">
-            <div className="title-carousel">
-                <div>
-                    <h4>
-                        <i className="fa fa-play-circle-o" aria-hidden="true"></i>
-                        <span>Newest uploads: </span>
-                    </h4>
-                </div>
-                <div></div>
-            </div>
-            <div id="carousels">
-        </div>
-    </div>
-    </div>
+            <PlaylistViewThird playlists={[props.plst[0]]}/>
+      </div>
+    
+    
 </section>               </li>
                <li className="" style={{"display":"none"}}>
-                    <div className="content__wrapper">
-    <div className="row justify-content-center">
-        <div className="col-md-11 col-sm-10 search-div">
+<div class="content__wrapper">
+               <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
+
+<div className="mm justify-content-center">
+<div className=" search-div col-md-11 mw " align="center">
             <span>
                 <img src="/img/search.svg" alt=""/>
-                <input type="text" id="search_video" name="search_video" placeholder="Search video"/> 
+                <input type="text" id="search_video_s" name="search_video" placeholder="Search video" onChange={(event)=>{
+if(event.target.value!='' && event.target.value!=null){
+    console.log(filterplst);
+                      let searchString = event.target.value;
+                      console.log(searchString);
+                      for(var i=0;i<threeplst.length;i++)
+                      {
+
+                          var newArray = threeplst[i].videos.filter(function (el) {
+                            return el.name == searchString;
+                            });
+                            filterplst[i].videos=newArray;
+
+                      }
+       console.log(filterplst);
+                    setIsSearch(true);
+
+                    }
+                    else {
+                        setIsSearch(false);
+                        //setFilterplst(props.plst);
+                        }
+                
+       }
+       }
+       /> 
             </span>
         </div>
-		        <div id="nothing_found" style={{"display":"none"}}>
-            Sorry, there are no video corresponding your search phrase.
-        </div>
-		<div className="play-list-names col-md-11 col-sm-10  slick-initialized slick-slider"><button className="slick-prev slick-arrow" aria-label="Previous" type="button" style={{"display":"block"}}></button><div className="slick-list draggable"><div className="slick-track" style={{"opacity":"1","width":"150000px","transform":"translate3d(0px, 0px, 0px)"}}><div className="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nature-documentaries-with-narration-english-4k-4k-hdr-9" tabIndex="-1">Nature Documentaries with Narration (English) 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><span>All playlists</span></div></div></div><div className="slick-slide" data-slick-index="1" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-new-videos-0" tabIndex="-1">New videos</a></div></div></div><div className="slick-slide" data-slick-index="2" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-free-4k-4k-hdr-videos-1" tabIndex="-1">FREE 4K &amp; 4K HDR Videos</a></div></div></div><div className="slick-slide" data-slick-index="3" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-aerial-footage-4k-4k-hdr-14" tabIndex="-1">Aerial Footage 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="4" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-tropical-beaches-4k-4k-hdr-7" tabIndex="-1">Tropical Beaches 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="5" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-wildlife-videos-4k-4k-hdr-27" tabIndex="-1">Wildlife Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="6" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-gardens-4k-4k-hdr-6" tabIndex="-1">Gardens 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="7" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-forests-woods-4k-4k-hdr-24" tabIndex="-1">Forests &amp; Woods 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="8" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-waterfalls-4k-4k-hdr-19" tabIndex="-1">Waterfalls 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="9" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-virtual-hikes-4k-4k-hdr-16" tabIndex="-1">Virtual Hikes 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="10" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-oceans-seas-4k-4k-hdr-21" tabIndex="-1">Oceans &amp; Seas 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="11" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-mountains-4k-4k-hdr-22" tabIndex="-1">Mountains 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="12" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-relax-videos-with-nature-sounds-4k-4k-hdr-28" tabIndex="-1">Relax Videos with Nature Sounds 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="13" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-part-2-relax-videos-with-nature-sounds-4k-4k-hdr-31" tabIndex="-1">Part 2 - Relax Videos with Nature Sounds 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="14" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-1-hour-relax-videos-with-nature-sounds-in-4k-4k-hdr-2" tabIndex="-1">1-Hour Relax Videos with Nature Sounds in 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="15" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-flowers-flower-fields-4k-4k-hdr-25" tabIndex="-1">Flowers &amp; Flower Fields 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="16" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-relax-videos-with-soothing-music-4k-4k-hdr-18" tabIndex="-1">Relax Videos with Soothing Music 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="17" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-rivers-streams-4k-4k-hdr-15" tabIndex="-1">Rivers &amp; Streams 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="18" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-lakes-4k-4k-hdr-23" tabIndex="-1">Lakes 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="19" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-sunsets-sunrises-4k-4k-hdr-20" tabIndex="-1">Sunsets &amp; Sunrises 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="20" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nighttime-relax-videos-4k-4k-hdr-35" tabIndex="-1">Nighttime Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="21" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-short-relax-videos-4k-4k-hdr-12" tabIndex="-1">Short Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="22" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-stress-relief-videos-with-voice-over-4k-hdr-4k-34" tabIndex="-1">Stress Relief Videos with Voice Over 4K HDR &amp; 4K</a></div></div></div><div className="slick-slide" data-slick-index="23" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-campfires-4k-4k-hdr-26" tabIndex="-1">Campfires 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="24" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-autumn-relax-videos-4k-4k-hdr-38" tabIndex="-1">Autumn Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="25" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-winter-relax-videos-4k-4k-hdr-29" tabIndex="-1">Winter Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="26" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-under-the-water-4k-4k-hdr-4" tabIndex="-1">Under the Water 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide" data-slick-index="27" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-4k-8k-screensavers-wallpapers-3" tabIndex="-1">4K 8K Screensavers-Wallpapers</a></div></div></div><div className="slick-slide" data-slick-index="28" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nature-documentary-films-4k-4k-hdr-no-narration--10" tabIndex="-1">Nature Documentary Films 4K &amp; 4K HDR (NO NARRATION)</a></div></div></div><div className="slick-slide" data-slick-index="29" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nature-documentaries-with-narration-english-4k-4k-hdr-9" tabIndex="-1">Nature Documentaries with Narration (English) 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="30" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><span>All playlists</span></div></div></div><div className="slick-slide slick-cloned" data-slick-index="31" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-new-videos-0" tabIndex="-1">New videos</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="32" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-free-4k-4k-hdr-videos-1" tabIndex="-1">FREE 4K &amp; 4K HDR Videos</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="33" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-aerial-footage-4k-4k-hdr-14" tabIndex="-1">Aerial Footage 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="34" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-tropical-beaches-4k-4k-hdr-7" tabIndex="-1">Tropical Beaches 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="35" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-wildlife-videos-4k-4k-hdr-27" tabIndex="-1">Wildlife Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="36" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-gardens-4k-4k-hdr-6" tabIndex="-1">Gardens 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="37" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-forests-woods-4k-4k-hdr-24" tabIndex="-1">Forests &amp; Woods 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="38" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-waterfalls-4k-4k-hdr-19" tabIndex="-1">Waterfalls 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="39" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-virtual-hikes-4k-4k-hdr-16" tabIndex="-1">Virtual Hikes 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="40" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-oceans-seas-4k-4k-hdr-21" tabIndex="-1">Oceans &amp; Seas 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="41" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-mountains-4k-4k-hdr-22" tabIndex="-1">Mountains 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="42" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-relax-videos-with-nature-sounds-4k-4k-hdr-28" tabIndex="-1">Relax Videos with Nature Sounds 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="43" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-part-2-relax-videos-with-nature-sounds-4k-4k-hdr-31" tabIndex="-1">Part 2 - Relax Videos with Nature Sounds 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="44" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-1-hour-relax-videos-with-nature-sounds-in-4k-4k-hdr-2" tabIndex="-1">1-Hour Relax Videos with Nature Sounds in 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="45" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-flowers-flower-fields-4k-4k-hdr-25" tabIndex="-1">Flowers &amp; Flower Fields 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="46" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-relax-videos-with-soothing-music-4k-4k-hdr-18" tabIndex="-1">Relax Videos with Soothing Music 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="47" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-rivers-streams-4k-4k-hdr-15" tabIndex="-1">Rivers &amp; Streams 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="48" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-lakes-4k-4k-hdr-23" tabIndex="-1">Lakes 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="49" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-sunsets-sunrises-4k-4k-hdr-20" tabIndex="-1">Sunsets &amp; Sunrises 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="50" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nighttime-relax-videos-4k-4k-hdr-35" tabIndex="-1">Nighttime Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="51" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-short-relax-videos-4k-4k-hdr-12" tabIndex="-1">Short Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="52" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-stress-relief-videos-with-voice-over-4k-hdr-4k-34" tabIndex="-1">Stress Relief Videos with Voice Over 4K HDR &amp; 4K</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="53" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-campfires-4k-4k-hdr-26" tabIndex="-1">Campfires 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="54" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-autumn-relax-videos-4k-4k-hdr-38" tabIndex="-1">Autumn Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="55" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-winter-relax-videos-4k-4k-hdr-29" tabIndex="-1">Winter Relax Videos 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="56" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-under-the-water-4k-4k-hdr-4" tabIndex="-1">Under the Water 4K &amp; 4K HDR</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="57" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-4k-8k-screensavers-wallpapers-3" tabIndex="-1">4K 8K Screensavers-Wallpapers</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="58" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nature-documentary-films-4k-4k-hdr-no-narration--10" tabIndex="-1">Nature Documentary Films 4K &amp; 4K HDR (NO NARRATION)</a></div></div></div><div className="slick-slide slick-cloned" data-slick-index="59" aria-hidden="true" tabIndex="-1"><div><div className="item" style={{"width":"100%","display":"inline-block"}}><a href="/playlist-nature-documentaries-with-narration-english-4k-4k-hdr-9" tabIndex="-1">Nature Documentaries with Narration (English) 4K &amp; 4K HDR</a></div></div></div></div></div><button className="slick-next slick-arrow" aria-label="Next" type="button" style={{"display":"block"}}></button></div>
-        <div className="col-md-11 col-sm-10 playlists-scrollbox">
-                            <div className="item-list">
-                    <div className="title-carousel">
-                        <div>
-                            <h4 className="carousel-name">
-                                <a href="/playlist-new-videos-0">
-                                    <i className="fa fa-play-circle-o" aria-hidden="true"></i> 
-                                    <span>New videos </span>
-                                </a>
-                            </h4>
-                                <span className="hoursAndCount"><span className="hideOnPhone">23 hours in </span>10 videos. </span>
-                                <span className="showAll"><a href="/playlist-new-videos-0">Show All</a></span>
-                        </div>
-                        <div></div>
-                    </div>
-                    <div id="titlecarousel"></div>
-                </div>
-                                <div className="item-list">
-                    <div className="title-carousel">
-                        <div>
-                            <h4 className="carousel-name">
-                                <a href="/playlist-free-4k-4k-hdr-videos-1">
-                                    <i className="fa fa-play-circle-o" aria-hidden="true"></i> 
-                                    <span>FREE 4K &amp; 4K HDR Videos </span>
-                                </a>
-                            </h4>
-                                <span className="hoursAndCount"><span className="hideOnPhone">7663 hours in </span>50 videos. </span>
-                                <span className="showAll"><a href="/playlist-free-4k-4k-hdr-videos-1">Show All</a></span>
-                        </div>
-                        <div></div>
-                    </div>
-                    <div id="titlecarousel2"></div>
-                </div>
-                                <div className="item-list">
-                    <div className="title-carousel">
-                        <div>
-                            <h4 className="carousel-name">
-                                <a href="/playlist-aerial-footage-4k-4k-hdr-14">
-                                    <i className="fa fa-play-circle-o" aria-hidden="true"></i> 
-                                    <span>Aerial Footage 4K &amp; 4K HDR </span>
-                                </a>
-                            </h4>
-                                <span className="hoursAndCount"><span className="hideOnPhone">276804 hours in </span>35 videos. </span>
-                                <span className="showAll"><a href="/playlist-aerial-footage-4k-4k-hdr-14">Show All</a></span>
-                        </div>
-                        <div></div>
-                    </div>
-                <div id="titlecarousel3"></div>
-                </div>
-                        </div>
-                    <div className="col-12 bottom-show">
-                <a href="playlists">Show More</a>
-            </div>
-                </div>
 </div>
+
+<Slickplaylists playlists={props.plst}/>
+<div >
+{isSearch ? (
+    
+<div className=" playlists-scrollbox">
+<PlaylistViewSecond playlists={filterplst}/>
+        </div>
+  
+):(
+
+  
+<div className=" playlists-scrollbox">
+<PlaylistView playlists={threeplst}/>
+        </div>
+    
+)}
+</div>
+
+
+</div>
+    </div>                
 <div id="hidden_playlists" style={{"display":"none"}}>
     </div>
 <script>
@@ -205,7 +201,33 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
           </ul>
      </div>
 </section>
+<section className="main-sign-up">
+     <div className="signup-text">
+          <h5>Love the Earth – Relax with Nature!</h5>
+          <p>Behold the beauty of nature! <b>Relax and restore yourself together with 4K Nature Relax TV.</b> Experience the majestic landscapes, enjoy the stunning views of the mountains, explore the diverse wildlife, listen to the soothing sounds of the rushing waterfalls and calm lakes, enjoy birds singing in the deep forests and more. <b>4K Relax TV brings peace and restores your inner peace and harmony in your life!</b></p>
+          <a href="subscription" className="button">Sign Up Now</a>
+     </div>
 
+</section>
+<div className="under-footer">
+<div className="more-inform my-2 my-lg-0">
+<p className="footer-follow"></p><h6>Available on multiple devices.</h6><p></p>
+     <div className="social">
+        
+
+          <a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><img src="/img/platforms/android.png" alt="android app"/></a>
+          <a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8" target="_blank" rel="nofollow"><img src="/img/platforms/iphone.png" alt="iphone app"/></a>
+          <a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><img src="/img/platforms/roku.png" alt="roku app"/></a>
+          <a href="#" rel="nofollow"><img src="/img/platforms/samsung-smart-tv.png" alt="roku app"/></a>
+<br/><br/>
+          <a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><img src="/img/platforms/android-tv.png" alt="android tv"/></a>
+          <a href="https://apps.apple.com/us/app/4k-nature-relax-tv/id1403683336#?platform=appleTV" target="_blank" rel="nofollow"><img src="/img/platforms/apple-tv.png" alt="apple tv"/></a>
+          <a href="https://www.amazon.com/Pro-Art-inc-Nature-Relax/dp/B074MC1G9X" target="_blank" rel="nofollow"><img src="/img/platforms/fire-tv.png" alt="amazon fire tv"/></a>
+          
+
+     </div>
+</div>
+    </div>
         </div>
     )
 }

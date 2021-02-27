@@ -1682,8 +1682,10 @@ export default function Pl() {
 ];
     return (
         <Router>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/about' component={About} />
+            <Route exact path='/'  render={(props) => (
+                            <Home plst={plst} />
+            )} />
+            <Route exact path='/about' component={About}  />
             <Route exact path='/explore' 
                         render={(props) => (
                             <Explore plst={plst} />
