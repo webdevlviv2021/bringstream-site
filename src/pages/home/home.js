@@ -185,6 +185,9 @@ if(event.target.value!='' && event.target.value!=null){
     </div>                
 <div id="hidden_playlists" style={{"display":"none"}}>
     </div>
+    <div class="col-12 bottom-show">
+                <a href="/explore">Show More</a>
+            </div>
 <script>
     $(function () {
         setTimeout(function () {

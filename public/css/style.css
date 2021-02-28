@@ -1325,7 +1325,7 @@ input:focus ~ .highlight {
     display: inline-block;
     width: 20px;
     font-size: 29px;
-    top: 6px;
+    top: -5px;
     left: 0px;
     height: 20px;
 }
@@ -1362,12 +1362,13 @@ input:focus ~ .highlight {
     border-radius: 4px;
     font-size: 20px;
     padding: 12px 48px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: inline-block;
 }
 
 .bottom-show a:hover{
     background: #b7ca00;
+    color: white !important    ;
 }
 section.how li {
     display: inline-block;
@@ -2294,7 +2295,7 @@ a.box2-i-more {
 }
 
 .box2-i-more:hover{
-    color: #fff;
+    color: #fff !important;
     background: #b7ca00;
 
 }
@@ -3399,6 +3400,10 @@ button, input, optgroup, select, textarea {
 .navbar {
     padding-top: 0 !important;
     padding-bottom: 0!important;
+}
+
+.lighterfont {
+    font-weight: lighter;
 }
 
 
