@@ -1337,7 +1337,7 @@ input:focus ~ .highlight {
 }
 
 .item-list {
-    margin-bottom: 30px;    
+    margin-bottom: -30px;    
     height: 300px;/*-bylo 237--*/
 }
 .item-list-adv {
