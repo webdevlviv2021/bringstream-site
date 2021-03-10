@@ -96,6 +96,7 @@ $(document).ready(function () {
                 items: 1,
                 nav: true,
                  loop: true,
+                  center:false,
             },
             600: {
                 items: 2,
