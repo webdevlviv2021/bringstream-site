@@ -13,7 +13,7 @@ export default function Pl() {
    
      const privateKey="~UniHash-767250902345~";
      let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=LoginAnonymous";
-      const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
+      //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
      let formData = new FormData();
 formData.append('jsonData','{}');
 formData.append('signature','376651b1b65bbdf9d286df54abea42e93bcf7d11');
