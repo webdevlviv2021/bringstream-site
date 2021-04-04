@@ -1,9 +1,64 @@
-import React from 'react'
-
+import React from 'react';
+import sha1 from 'crypto-js/sha1';
 const Video = (props) => {
+let videoinfo;
+
+  const privateKey="~UniHash-767250902345~";
+     let action = "action=LoginAnonymous";
+     let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
+     let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
+      //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
+     let formData = new FormData();
+     let signature= sha1(action+privateKey+'{}')
+formData.append('jsonData','{}');
+formData.append('signature',signature);
+
+     fetch(queryString, {
+         mode:"cors",
+         method:"POST",
+         body:formData
+})
+  .then((response) => {
+     
+    return response.json();
+  })
+  .then(data => 
+    {
+
+        queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
+        action="action=GetVideoInfo&openKey="+data.aOpenKey;
+         formData = new FormData();
+         let jsonData =`{"id":${props.match.params.id},"fields":{"name":30,"duration":0,"pictures":[640,1920],"hdr":0}}`;
+         signature = sha1(action + data.aPrivateKey + jsonData);
+        console.log("privatekey",data.aPrivateKey);
+        formData.append('jsonData',jsonData);
+        formData.append('signature',signature);
+        fetch(queryString, {
+                mode:"cors",
+                method:"POST",
+                body:formData
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then(data => 
+            {console.log("data",data);})
+            .catch(error => {
+            console.log("error", error);
+        });
+        console.log("data",data);
+    }
+
+
+    
+  )
+  .catch(error => {
+    console.log("error", error);
+  });
 
 var myvideo;
-        props.plst.forEach(element => {
+console.log(props);
+        props.plst[0].playlists.forEach(element => {
             element.videos.forEach(video => {
             if(video.id==props.match.params.id)
             {
