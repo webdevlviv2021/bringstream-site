@@ -31,7 +31,7 @@ formData.append('signature',signature);
          queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
          action="action=GetPlaylists&openKey="+data.aOpenKey;
         let formData = new FormData();
-        let jsonData ='{"general":1,"new":1,"favorites":1,"statistic":1,"count":10,"playlists_fields":{"id":0,"name":30,"description":50,"premium":0,"free":0,"duration":0,"pictures":[640,1920],"videos_count":0},"videos":{"count":10,"fields":{"id":0,"name":30,"duration":0,"hdr":0,"pictures":[600],"position":0}}}';
+        let jsonData ='{"where":"id = 1","general":1,"new":1,"favorites":1,"statistic":1,"count":10,"playlists_fields":{"id":0,"name":30,"description":50,"premium":0,"free":0,"duration":0,"pictures":[640,1920],"videos_count":0},"videos":{"count":10,"fields":{"id":0,"name":30,"duration":0,"hdr":0,"pictures":[600],"position":0}}}';
         let signature = sha1(action + data.aPrivateKey + jsonData);
         console.log("privatekey",data.aPrivateKey);
         formData.append('jsonData',jsonData);
