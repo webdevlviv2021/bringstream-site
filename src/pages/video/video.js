@@ -1,19 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import sha1 from 'crypto-js/sha1';
 const Video = (props) => {
-let videoinfo;
+//let videoinfo;
+const [videoinfo, setVideoInfo] = useState({});
+const [videoid, setVideoId] = useState(props.match.params.id);
 
-  const privateKey="~UniHash-767250902345~";
+const GetVideoData = async(data)=>{
+
+   let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
+        let action="action=GetVideoInfo&openKey="+data.aOpenKey;
+         let formData = new FormData();
+         let jsonData =`{"id":${videoid},"fields":{"name":30,"duration":0,"pictures":[640,1920],"hdr":0}}`;
+         let signature = sha1(action + data.aPrivateKey + jsonData);
+        console.log("privatekey",data.aPrivateKey);
+        formData.append('jsonData',jsonData);
+        formData.append('signature',signature);
+        await fetch(queryString, {
+                mode:"cors",
+                method:"POST",
+                body:formData
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then(data => 
+            {console.log("data",data); setVideoInfo(data);return data;})
+            .catch(error => {
+            console.log("error", error);
+        });
+}
+const GetVideoInfo = async()=>{
+
+
+     const privateKey="~UniHash-767250902345~";
      let action = "action=LoginAnonymous";
      let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
      let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
      let formData = new FormData();
      let signature= sha1(action+privateKey+'{}')
-formData.append('jsonData','{}');
-formData.append('signature',signature);
+     formData.append('jsonData','{}');
+     formData.append('signature',signature);
 
-     fetch(queryString, {
+     await fetch(queryString, {
          mode:"cors",
          method:"POST",
          body:formData
@@ -25,28 +54,9 @@ formData.append('signature',signature);
   .then(data => 
     {
 
-        queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
-        action="action=GetVideoInfo&openKey="+data.aOpenKey;
-         formData = new FormData();
-         let jsonData =`{"id":${props.match.params.id},"fields":{"name":30,"duration":0,"pictures":[640,1920],"hdr":0}}`;
-         signature = sha1(action + data.aPrivateKey + jsonData);
-        console.log("privatekey",data.aPrivateKey);
-        formData.append('jsonData',jsonData);
-        formData.append('signature',signature);
-        fetch(queryString, {
-                mode:"cors",
-                method:"POST",
-                body:formData
-        })
-        .then((response) => {
-            return response.json();
-        })
-        .then(data => 
-            {console.log("data",data);})
-            .catch(error => {
-            console.log("error", error);
-        });
+       GetVideoData(data);
         console.log("data",data);
+        return data;
     }
 
 
@@ -55,6 +65,11 @@ formData.append('signature',signature);
   .catch(error => {
     console.log("error", error);
   });
+}
+ useEffect(() => {
+    setVideoInfo(GetVideoInfo());
+  },videoid);
+ 
 
 var myvideo;
 console.log(props);
