@@ -6,7 +6,7 @@ import Video from '../pages/video/video';
 import Playlists from '../pages/playlist/playlists';
 import sha1 from 'crypto-js/sha1';
 export default function Pl() {
-   
+   /*
      const privateKey="~UniHash-767250902345~";
      let action = "action=LoginAnonymous";
      let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
@@ -82,7 +82,7 @@ formData.append('signature',signature);
     console.log("error", error);
   });
 
-
+*/
 
 const plst=
 [
