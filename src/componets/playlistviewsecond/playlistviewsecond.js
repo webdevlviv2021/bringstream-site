@@ -19,7 +19,7 @@ const PlaylistViewSecond = (playlists, initial) => {
      }
 
      else {
-         return ("<div></div>");
+         return (<div></div>);
      }
 }
 
