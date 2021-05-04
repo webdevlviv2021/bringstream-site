@@ -106,7 +106,7 @@
 
   {
     myplaylist.videos.map((item) => {
-      let itemlink ="video/"+item.id;
+      let itemlink ="/video/"+item.id;
         let date = new Date(0);
           date.setSeconds(item.duration); // specify value for SECONDS here
 
