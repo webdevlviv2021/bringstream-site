@@ -12,30 +12,116 @@ import sha1 from 'crypto-js/sha1';
 const Explore = (props) => {
     const $=window.jQuery;
 var [filterplst, setFilterplst] = useState([]);
-const people = [
-  "Siri",
-  "Alexa",
-  "Google",
-  "Facebook",
-  "Twitter",
-  "Linkedin",
-  "Sinkedin"
-];
 const [searchTerm, setSearchTerm] = React.useState("");
- const [searchResults, setSearchResults] = React.useState([]);
+ const [searchResults, setSearchResults] = React.useState(props.plst);
+  const [someRes, setSomeRes] = React.useState([]);
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
 
 
-
-  
+console.log("exploreprops",props);
+    React.useEffect(async() => {
+        
+       // 
+          $('.owl-carousel-c-second').owlCarousel({nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }}  );
+        if(searchTerm=="") 
+     setSearchResults(props.plst);
+    });
 
    React.useEffect(async() => {
+      
+     console.log("effect props",props.plst.playlists);
+     if(props.plst.playlists instanceof Array)
+     {
+    const results = props.plst.playlists.filter(playlist =>
+     {
+ 
+         return playlist.videos.filter(video=>
+         {return video.name.includes(searchTerm);}
+         ).length>0 ||playlist.name.includes(searchTerm)||playlist.description.includes(searchTerm)
+   
+     }
+    
+    );
+    console.log("results", results.length);
+
+     ;
+      if(results.length>0)
+      {setSearchResults({"playlists":results});}
+      else {
+          if(results.length==0)        setSearchResults({"playlists":{}});
+        $('.owl-carousel-c-second').owlCarousel({nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }}  );
+      }
+       
+    }
+    else {
+        setSearchResults(props.plst);
+      
+    }
+    
+   
    /* const results = people.filter(person =>
-      person.toLowerCase().includes(searchTerm)
+      person.includes(searchTerm)
     );
     */
+    /*
     const GetPlaylistsArray = async(data)=>{
         let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
         let   action="action=GetPlaylists&openKey="+data.aOpenKey;
@@ -124,6 +210,7 @@ formData.append('signature',signature);
 
 
    GetLoginAnonymous();
+   */
    $('.owl-carousel-c-second').owlCarousel({nav:true,
         center:true,
         items:4,
@@ -158,6 +245,7 @@ filterplst=props.plst;
 const [filterplstsc, setFilterplstsc] = useState(filterplst);
 const [isSearch, setIsSearch] = useState(true);
 var filteredplaylists=[];
+const myarr = [];
     return (
        <React.Fragment> 
        <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
@@ -169,36 +257,7 @@ var filteredplaylists=[];
 <div className=" search-div col-md-11 mw " align="center">
             <span>
                 <img src="/img/search.svg" alt=""/>
-                <input type="text" id="search_video" name="search_video" placeholder="Search video" value={searchTerm} onChange={
-                    /*(event)=>{
-                    
-if(event.target.value!='' && event.target.value!=null){
-    console.log(filterplst);
-                      let searchString = event.target.value;
-                      console.log(searchString);
-                      for(var i=0;i<props.plst.length;i++)
-                      {
-
-                          var newArray = props.plst[i].videos.filter(function (el) {
-                            return el.name == searchString;
-                            });
-                            filterplst[i].videos=newArray;
-
-                      }
-       console.log(filterplst);
-                    setIsSearch(true);
-
-                    }
-                    else {
-                        setIsSearch(false);
-                        //setFilterplst(props.plst);
-                        }
-                
-       }
-       */
-       handleChange
-       }
-       /> 
+                <input type="text" id="search_video" name="search_video" placeholder="Search video" value={searchTerm} onChange={handleChange} /> 
             </span>
         </div>
 </div>
