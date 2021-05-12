@@ -122,8 +122,8 @@ var myvideo;
   var videosrc;
   var description;
 console.log(myvideo);
-
-        props.plst[0].playlists.forEach(element => {
+if(props.plst.playlists !=undefined){
+        props.plst.playlists.forEach(element => {
             element.videos.forEach(video => {
             if(video.id==props.match.params.id)
             {
@@ -131,7 +131,7 @@ console.log(myvideo);
             }
         });
         });
-
+}
         var title;
 
         title=videoname;

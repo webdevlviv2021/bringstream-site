@@ -7,62 +7,7 @@
   const Playlists = (playlists) => {
     console.log(playlists.plst);
     let myplaylist;
-    async function GetPlaylist(){
-    const privateKey="~UniHash-767250902345~";
-      let action = "action=LoginAnonymous";
-      let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
-      let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
-        //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
-      let formData = new FormData();
-      let signature= sha1(action+privateKey+'{}')
-  formData.append('jsonData','{}');
-  formData.append('signature',signature);
 
-      fetch(queryString, {
-          mode:"cors",
-          method:"POST",
-          body:formData
-  })
-    .then((response) => {
-      
-      return response.json();
-    })
-    .then(data => 
-      {
-          queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
-          action="action=GetPlaylists&openKey="+data.aOpenKey;
-          let formData = new FormData();
-          let plid =playlists.match.params.id;
-          let jsonData =`{"where":"id = ${plid}","general":1,"new":1,"favorites":1,"statistic":1,"count":10,"playlists_fields":{"id":0,"name":30,"description":50,"premium":0,"free":0,"duration":0,"pictures":[640,1920],"videos_count":0},"videos":{"count":10,"fields":{"id":0,"name":30,"duration":0,"hdr":0,"pictures":[600],"position":0}}}`;
-          let signature = sha1(action + data.aPrivateKey + jsonData);
-          console.log("privatekey",data.aPrivateKey);
-          formData.append('jsonData',jsonData);
-          formData.append('signature',signature);
-          myplaylist= fetch(queryString, {
-                  mode:"cors",
-                  method:"POST",
-                  body:formData
-          })
-          .then((response) => {
-
-              return response.json();
-          })
-          .then(data => 
-              {})
-              .catch(error => {
-              console.log("error", error);
-          });
-          console.log("data",data);
-
-      }
-
-
-      
-    )
-    .catch(error => {
-      console.log("error", error);
-    });
-  }
 
       // if(playlists.plst!=null&&Array.isArray(playlists.plst))
       // {
@@ -73,12 +18,17 @@
         
       // }
 
-      playlists.plst[0].playlists.forEach(item=>{
+ 
+console.log(playlists.plst.playlists);
+if(playlists.plst.playlists!=undefined)
+  {
+      playlists.plst.playlists.forEach(item=>{
           if(playlists.match.params.id==item.id)
             {myplaylist=item;}
       });
+}
         console.log(myplaylist);
-      if (myplaylist==null ) return(<div>123</div>);
+      if (myplaylist==null ) return(<div></div>);
       console.log(myplaylist);
       return (
         <section className="playlists-s">
