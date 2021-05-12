@@ -2686,7 +2686,7 @@ const plst=
     return (
         <Router>
             <Route exact path='/'  render={(props) => (
-                            <Home plst={plst} />
+                            <Home plst={plst} plstz={playlists}/>
             )} />
             <Route exact path='/about' component={About}  />
             <Route exact path='/explore' 

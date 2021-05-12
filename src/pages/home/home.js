@@ -9,13 +9,141 @@ import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviews
 import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
 const Home = (props) => {
     const $=window.jQuery;
-    var [filterplst, setFilterplst] = useState([]);
-filterplst=[props.plst[0],props.plst[1],props.plst[2]];
-var [threeplst, setThreeplst] = useState([]);
-threeplst =[props.plst[0],props.plst[1],props.plst[2]];
-const [filterplstsc, setFilterplstsc] = useState(filterplst);
 const [isSearch, setIsSearch] = useState(false);
-var filteredplaylists=[];
+const [searchTerm, setSearchTerm] = React.useState("");
+const [searchResults, setSearchResults] = React.useState(props.plstz);
+const handleChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+   React.useEffect(async() => {
+        
+       // 
+          $('.owl-carousel-c').owlCarousel({nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }}  );
+        if(searchTerm=="") 
+     setSearchResults(props.plstz);
+    });
+
+
+    React.useEffect(async() => {
+      
+     console.log("effect props",props.plstz.playlists);
+     if(props.plstz.playlists instanceof Array)
+     {
+    const results = props.plstz.playlists.filter(playlist =>
+     {
+ 
+         return playlist.videos.filter(video=>
+         {return video.name.toLowerCase().includes(searchTerm.toLowerCase());}
+         ).length>0 ||playlist.name.toLowerCase().includes(searchTerm)||playlist.description.toLowerCase().includes(searchTerm.toLowerCase())
+   
+     }
+    
+    );
+    console.log("results", results.length);
+
+     ;
+      if(results.length>0)
+      {setSearchResults({"playlists":results});}
+      else {
+          if(results.length==0)        setSearchResults({"playlists":{}});
+        $('.owl-carousel-c').owlCarousel({nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }}  );
+      }
+       
+    }
+    else {
+        setSearchResults(props.plstz);
+      
+    }
+    
+
+   $('.owl-carousel-c').owlCarousel({nav:true,
+        center:true,
+        items:4,
+        loop: true,
+        slideBy:2,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                 loop: true,
+            },
+            600: {
+                items: 2,
+                nav: true,
+                 loop: true,
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                 loop: true,
+            },
+            1200: {
+                items: 4,
+                nav: true,
+                 loop: true,
+            }
+        }}  );
+  }, [searchTerm]);
+
     return (
         <div>
             <header className="top_header ha-waypoint ha-header-small header35">
@@ -106,7 +234,7 @@ var filteredplaylists=[];
     <div className="free-preview-bg">
         <div className="fp-slider">
           
-            <PlaylistViewFourth playlists={[props.plst[0]]}/>
+            <PlaylistViewFourth playlists={[props.plstz]}/>
         </div>
         <div className="fp-text">
                         <h5>FREE PREVIEW - <span id="free_preview_name">Hoh Rain Forest</span></h5>
@@ -119,7 +247,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 
 <section className="carousel-block" style={{"display":"block"}}>
         <div className="col-md-11 col-sm-10">
-            <PlaylistViewThird playlists={[props.plst[0]]}/>
+            <PlaylistViewThird playlists={[props.plstz]}/>
       </div>
     
     
@@ -132,49 +260,24 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 <div className=" search-div col-md-11 mw " align="center">
             <span>
                 <img src="/img/search.svg" alt=""/>
-                <input type="text" id="search_video_s" name="search_video" placeholder="Search video" onChange={(event)=>{
-if(event.target.value!='' && event.target.value!=null){
-    console.log(filterplst);
-                      let searchString = event.target.value;
-                      console.log(searchString);
-                      for(var i=0;i<threeplst.length;i++)
-                      {
-
-                          var newArray = threeplst[i].videos.filter(function (el) {
-                            return el.name == searchString;
-                            });
-                            filterplst[i].videos=newArray;
-
-                      }
-       console.log(filterplst);
-                    setIsSearch(true);
-
-                    }
-                    else {
-                        setIsSearch(false);
-                        //setFilterplst(props.plst);
-                        }
-                
-       }
-       }
-       /> 
+                <input type="text" id="search_video_s" name="search_video" placeholder="Search video" onChange={handleChange} /> 
             </span>
         </div>
 </div>
 
-<Slickplaylists playlists={props.plst}/>
+<Slickplaylists playlists={props.plstz}/>
 <div >
 {isSearch ? (
     
-<div className=" playlists-scrollbox">
-<PlaylistViewSecond playlists={filterplst}/>
+<div className=" playlists-scrollbox-undef">
+
         </div>
   
 ):(
 
   
 <div className=" playlists-scrollbox">
-<PlaylistView playlists={threeplst}/>
+<PlaylistView playlists={searchResults}/>
         </div>
     
 )}

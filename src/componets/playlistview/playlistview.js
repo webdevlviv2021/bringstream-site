@@ -2,8 +2,15 @@ import React from 'react';
 import PlaylistCarousel from '../playlistcarousel/playlistcarousel';
 
 const PlaylistView = (playlists) => {
-    console.log(playlists["playlists"][0].playlists);
-    const listItems =playlists["playlists"][0].playlists.map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
+console.log(playlists);
+    if(playlists.playlists.playlists instanceof Object)
+    {
+    
+
+
+  if(Object.keys(playlists.playlists.playlists).length===0){ return(<div>Nothing found</div>)};
+    const listItems = 
+    playlists.playlists.playlists.map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
     return <PlaylistCarousel link={link} playlistname={name} videos={videos}/>
 });
@@ -11,6 +18,11 @@ const PlaylistView = (playlists) => {
     return (
             listItems
     );
+     }
+
+     else {
+         return (<div></div>);
+     }
 }
 
 export default PlaylistView;

@@ -6,6 +6,7 @@ import OwlCarouselVideoItems from '../owlcarouselvideoitems/owlcarouselvideoitem
 const NewestUploads = ({link,playlistname,videos}) => {
 
     const $=window.jQuery;
+    console.log("NewestUploads",videos);
     return (
 <div className="item-list">
         <div className="title-carousel">
