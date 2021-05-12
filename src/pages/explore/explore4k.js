@@ -66,8 +66,8 @@ console.log("exploreprops",props);
      {
  
          return playlist.videos.filter(video=>
-         {return video.name.includes(searchTerm);}
-         ).length>0 ||playlist.name.includes(searchTerm)||playlist.description.includes(searchTerm)
+         {return video.name.toLowerCase().includes(searchTerm.toLowerCase());}
+         ).length>0 ||playlist.name.toLowerCase().includes(searchTerm)||playlist.description.toLowerCase().includes(searchTerm.toLowerCase())
    
      }
     
