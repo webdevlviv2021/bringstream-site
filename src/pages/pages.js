@@ -30,7 +30,10 @@ export default function Pl() {
             return  response.json();
         })
         .then(data => 
-            {console.log("searchdata",data); setPlaylists(data);})
+            {
+              console.log("searchdata",data); 
+              setPlaylists(data);
+            })
             .catch(error => {
             console.log("error", error);
         });

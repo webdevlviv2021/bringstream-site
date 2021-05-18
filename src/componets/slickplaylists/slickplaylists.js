@@ -10,27 +10,27 @@ const $=window.jQuery;
  useEffect(() => {
          // your post layout code (or 'effect') here.
         
-  playListNames.not('.slick-initialized').slick({
+  $('.play-list-names').not('.slick-initialized').slick({
 		mobileFirst: true,
 		arrows: true,
         draggable: true,
 		dots: false,
 		swipeToSlide: true,
-        
-		infinate: true,
+
 		variableWidth: true,
 	});
-   
+ // $('.play-list-names').slick('unslick');
+ 
      },
      // array of variables that can trigger an update if they change. Pass an
      // an empty array if you just want to run it once after component mounted. 
-     [])
-	
+     [playListNames]);
+
    return(
  <section className="playlists-s">
   <div className="container">
 	      <div className="row">
-       <div className="play-list-names col-md-12 col-sm-12 slick-slider">
+       <div className="play-list-names col-md-12 col-sm-12 slick-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
        {isArray ?(
      
        props.playlists.playlists.map((item)=>{

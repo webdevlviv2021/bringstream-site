@@ -8,6 +8,12 @@ const [videodesc, setVideoDesc] = useState("");
 const [videoname, setVideoName] = useState("");
 const [videoduration, setVideoDuration] = useState(0);
 
+
+    window.onpopstate = function () {
+        console.log(window.history);
+      window.top.history.back();
+
+    };
 const GetVideoDuration = (seconds)=>
 {
     let date = new Date(0);
