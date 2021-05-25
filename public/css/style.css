@@ -3406,6 +3406,13 @@ button, input, optgroup, select, textarea {
     font-weight: lighter;
 }
 
+.displayiframeheader {
+    visibility: hidden;
+}
+
+.iframebackground {
+    background-color: #333;
+}
 
 
 

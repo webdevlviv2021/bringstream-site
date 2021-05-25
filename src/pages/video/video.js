@@ -152,7 +152,7 @@ if(props.plst.playlists !=undefined){
         <div>
         
        <div id="video_container">
-        <iframe className="black_back" src={videosrc} width="100%" height="532.125" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen="" title={videoname} __idm_id__="819894273" data-ready="true"></iframe>
+        <iframe className="black_back iframebackground" src={videosrc} width="100%" height="532.125" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen="" title={videoname} __idm_id__="819894273" data-ready="true"></iframe>
     </div>
     <div class="video-l-st col-lg-9">
                                                 <h1 id="the_name" in_favorites="0"><span>{videoname}</span>

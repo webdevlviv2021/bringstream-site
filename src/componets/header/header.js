@@ -5,9 +5,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 //import { Explore} from "../../pages/explore/explore4k";
 const Header = () => {
+    const inIframe = window.self!==window.top;
+    const hideIframeHeader = !inIframe ?"":"displayiframeheader"
     return (
 
-            <nav className="navbar-4k-style navbar navbar-expand-lg navbar-dark  sticky-top">
+            <nav className={"navbar-4k-style navbar navbar-expand-lg navbar-dark  sticky-top " +hideIframeHeader} style={{"backgroundColor":"#333"}}>
     <a className="logo navbar-brand" href="/">
         <img className="logoimg" src={logo} alt="logo" />
         </a>
@@ -47,6 +49,7 @@ const Header = () => {
             </div>
         </nav>
     )
+  
 }
 
 export default Header;
