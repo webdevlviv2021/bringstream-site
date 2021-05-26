@@ -1,22 +1,90 @@
-$(document).ready(function () {
-    var playListNames = $('.play-list-names');
-	var slideIndex = $('.play-list-names .item.active').index();
-	
 
-	playListNames.not('.slick-initialized').slick({
+
+$(document).resize(function(){
+    console.log('resize');
+//$('.play-list-names-explore').slick(window.slickSettingsExplore);
+//$('.play-list-names-explore').slick('resize');
+});
+$(document).ready(function () {
+
+  window.slickSettings = {
+		mobileFirst: true,
+		arrows: true,
+        draggable: true,
+		dots: false,
+		swipeToSlide: false,
+		infinite: true,
+		variableWidth: true,
+	};
+    window.slickSettingsExplore = {
 		mobileFirst: true,
 		arrows: true,
         draggable: true,
 		dots: false,
 		swipeToSlide: true,
-        
-		infinate: true,
+		infinite: true,
 		variableWidth: true,
-	});
+	};
+   //
+
+
+ // $('.play-list-names-explore').slick(window.slickSettingsExplore);
+
+    $(window).on('load', function() {
+        window.slickSettings = {
+		mobileFirst: true,
+		arrows: true,
+        draggable: true,
+		dots: false,
+		swipeToSlide: true,
+		infinite: true,
+		variableWidth: true,
+	};
+    window.slickSettingsExplore = {
+		mobileFirst: true,
+		arrows: true,
+        draggable: true,
+		dots: false,
+		swipeToSlide: true,
+		infinite: true,
+		variableWidth: true,
+	};
+       
+           
+  $('.play-list-names').slick(window.slickSettings);
+
+
+});
+
+
+$('.play-list-names-explore').not('.slick-initialized').slick(window.slickSettingsExplore);
+
+
+     
+    var playListNames = $('.play-list-names-explore');
+
+	var slideIndex = $('.play-list-names .item.active').index();
+	var slideIndexExplore = $('.play-list-names-explore .item.active').index();
+   
+console.log(slideIndex);
+console.log(slideIndexExplore);
 	if (slideIndex > 0) {
+       
 		$('.play-list-names').slick('slickGoTo', slideIndex);
+
 	}
+
+
     
+    
+	
+
+	if (slideIndexExplore > 0) {
+
+		$('.play-list-names-explore').slick('slickGoTo', slideIndexExplore);
+	}
+//$('.play-list-names-explore').slick('refresh');
+   
     $('.select-price-text').on('click', function() {
         var price = $('.price-text', this).text();
         
@@ -337,9 +405,6 @@ function(){
 //no need for padding hack since we are setting the height based off of the width * aspect ratio
     resizer();
 //container.style.padding = 0;
-
-
-
 
 
 

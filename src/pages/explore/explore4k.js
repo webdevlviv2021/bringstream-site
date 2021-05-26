@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useLayoutEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import OwlCarouselMain from '../../componets/owlcarouselmain/owlcarouselmain';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -6,24 +6,31 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import PlaylistCarousel from '../../componets/playlistcarousel/playlistcarousel';
 import PlaylistView from '../../componets/playlistview/playlistview';
 import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviewsecond';
-import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
+
 import "./explore4k.css";
 import sha1 from 'crypto-js/sha1';
+import SlickplaylistsExplore from '../../componets/slickplaylistsexplore/slickplaylistsexplore';
+import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
 const Explore = (props) => {
     const $=window.jQuery;
-var [filterplst, setFilterplst] = useState([]);
+
 const [searchTerm, setSearchTerm] = React.useState("");
  const [searchResults, setSearchResults] = React.useState(props.plst);
   const [someRes, setSomeRes] = React.useState([]);
+   const [isPlaylistsNotEmpty, setIsPlaylistsNotEmpty] = React.useState(false);
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
 
+ 
+if((props.plst!==undefined) && (props.plst.playlists!==undefined) && (props.plst.playlists.playlists!==undefined) &&(props.plst.playlists.playlists instanceof Array) ){
+   setIsPlaylistsNotEmpty(true);
+}
 
 console.log("exploreprops",props);
     React.useEffect(async() => {
-        
-       // 
+  
+
           $('.owl-carousel-c-second').owlCarousel({nav:true,
         center:true,
         items:4,
@@ -53,15 +60,18 @@ console.log("exploreprops",props);
                  loop: true,
             }
         }}  );
+
+       
         if(searchTerm=="") 
      setSearchResults(props.plst);
     });
 
    React.useEffect(async() => {
-      
-     console.log("effect props",props.plst.playlists);
+
      if(props.plst.playlists instanceof Array)
      {
+
+ 
     const results = props.plst.playlists.filter(playlist =>
      {
  
@@ -78,7 +88,7 @@ console.log("exploreprops",props);
       if(results.length>0)
       {setSearchResults({"playlists":results});}
       else {
-          if(results.length==0)        setSearchResults({"playlists":{}});
+          if(results.length==0)        setSearchResults({"playlists":{}} );
         $('.owl-carousel-c-second').owlCarousel({nav:true,
         center:true,
         items:4,
@@ -112,8 +122,8 @@ console.log("exploreprops",props);
        
     }
     else {
+   
         setSearchResults(props.plst);
-      
     }
     
    
@@ -240,29 +250,39 @@ formData.append('signature',signature);
                  loop: true,
             }
         }}  );
+     
   }, [searchTerm]);
-filterplst=props.plst;
-const [filterplstsc, setFilterplstsc] = useState(filterplst);
+
 const [isSearch, setIsSearch] = useState(true);
-var filteredplaylists=[];
+
 const myarr = [];
     return (
        <React.Fragment> 
+      
        <div style={{paddingLeft:"50px !important",paddingRight:"50px !important"}}>
 <OwlCarouselMain/>
 <div className="descr">
     <p>Largest collection of 4K &amp; 4K HDR videos for relaxation! <span>1.476</span> hours &amp; <span>899</span> videos for your home and business! <span>New content is added REGULARLY!</span></p>
 </div>
 <div className="mm justify-content-center">
-<div className=" search-div col-md-11 mw " align="center">
+<div className="search-div col-md-11 mw" align="center">
             <span>
                 <img src="/img/search.svg" alt=""/>
                 <input type="text" id="search_video" name="search_video" placeholder="Search video" value={searchTerm} onChange={handleChange} /> 
             </span>
-        </div>
+     
 </div>
+</div>
+{!isPlaylistsNotEmpty?(
+<SlickplaylistsExplore playlists={props.plst} />
 
-<Slickplaylists playlists={props.plst}/>
+):(
+    <div></div>
+)}
+
+
+
+   
 <div >
 {isSearch ? (
     

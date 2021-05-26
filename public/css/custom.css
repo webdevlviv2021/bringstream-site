@@ -686,16 +686,18 @@ input#user_name {
         width: 79% !important;
     }
 }
-.play-list-names {
+.play-list-names, .play-list-names-explore {
 	margin-top: 40px;
 	margin-bottom: 30px;
 }
-.play-list-names {
+.play-list-names, .play-list-names-explore {
 	/* overflow: hidden; */
 	height: 60px;
 }
 .play-list-names .item span,
-.play-list-names .item a {
+.play-list-names .item a,
+.play-list-names-explore .item span,
+.play-list-names-explore .item a {
 	padding: 20px 30px;
 	border-radius: 10px;
 	background: #ccc;
@@ -706,12 +708,17 @@ input#user_name {
 }
 .play-list-names .item span,
 .play-list-names .item.active a,
-.play-list-names .item a:hover {
+.play-list-names .item a:hover,
+.play-list-names-explore .item span,
+.play-list-names-explore .item.active a,
+.play-list-names-explore .item a:hover {
 	transition: all 0.3s ease 0s;
 	background: #c4d700;
 }
 .play-list-names .owl-prev,
-.play-list-names .owl-next {
+.play-list-names .owl-next,
+.play-list-names-explore .owl-prev,
+.play-list-names-explore .owl-next {
 	margin-top:-78px;
 }
 #regtabs.lics .tablink[data="lic_form"] {
@@ -780,6 +787,14 @@ input#user_name {
 .add-device-section form input::placeholder {
 	color: #333;
 }
+
+.slick-prev:before {
+    content: "";
+  }
+  
+  .slick-next:before {
+    content: "";
+  }
 .slick-prev:after {
 	font-family: FontAwesome;
 	content: url('https://api.iconify.design/fa:angle-left.svg?color=%23ddd&height=50');
@@ -809,6 +824,15 @@ input#user_name {
 	padding: 0 30px;
 	position: relative;
     -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+}
+
+.play-list-names-explore {
+    padding: 0 0;
+	position: relative;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+
 }
 .slick-prev {
 	position: absolute;
@@ -819,6 +843,7 @@ input#user_name {
 	width: 20px;
 	background: none;
 	outline: none !important;
+    font-size: 0;
 }
 .slick-next {
 	position: absolute;
@@ -828,7 +853,8 @@ input#user_name {
 	height: 40px;
 	background: none;
 	outline: none !important;
-	width: 20px
+	width: 20px;
+    font-size: 0;
 }
 .slick-prev:focus,
 .slick-next:focus {
@@ -860,7 +886,7 @@ input#user_name {
 	.slick-prev, .slick-next{
 		display: none !important;
 	}
-	.play-list-names {
+	.play-list-names,.play-list-names-explore {
 		padding: 0 12px;
 	}
     .about-subscription .total-label,

@@ -79,12 +79,14 @@ formData.append('signature',signature);
     return (
         <Router>
             <Route exact path='/'  render={(props) => (
-                            <Home  plstz={playlists}/>
+                            <Home  plst={playlists}/>
             )} />
-            <Route exact path='/about' component={About}  />
+            <Route exact path='/about' render={(props) => (
+                            <About  plst={playlists} />
+            )}   />
             <Route exact path='/explore' 
                         render={(props) => (
-                            <Explore plst={playlists} />
+                            <Explore  plst={playlists} />
             )} />
             <Route exact path='/playlist/:id' render={(props) => (
                             <Playlists {...props} plst={playlists} />

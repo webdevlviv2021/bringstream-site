@@ -11,7 +11,7 @@ const Home = (props) => {
     const $=window.jQuery;
 const [isSearch, setIsSearch] = useState(false);
 const [searchTerm, setSearchTerm] = React.useState("");
-const [searchResults, setSearchResults] = React.useState(props.plstz);
+const [searchResults, setSearchResults] = React.useState(props.plst);
 const handleChange = event => {
     setSearchTerm(event.target.value);
   };
@@ -49,16 +49,16 @@ const handleChange = event => {
             }
         }}  );
         if(searchTerm=="") 
-     setSearchResults(props.plstz);
+     setSearchResults(props.plst);
     });
 
 
     React.useEffect(async() => {
       
-     console.log("effect props",props.plstz.playlists);
-     if(props.plstz.playlists instanceof Array)
+     console.log("effect props",props.plst.playlists);
+     if(props.plst.playlists instanceof Array)
      {
-    const results = props.plstz.playlists.filter(playlist =>
+    const results = props.plst.playlists.filter(playlist =>
      {
  
          return playlist.videos.filter(video=>
@@ -108,7 +108,7 @@ const handleChange = event => {
        
     }
     else {
-        setSearchResults(props.plstz);
+        setSearchResults(props.plst);
       
     }
     
@@ -234,7 +234,7 @@ const handleChange = event => {
     <div className="free-preview-bg">
         <div className="fp-slider">
           
-            <PlaylistViewFourth playlists={[props.plstz]}/>
+            <PlaylistViewFourth playlists={[props.plst]}/>
         </div>
         <div className="fp-text">
                         <h5>FREE PREVIEW - <span id="free_preview_name">Hoh Rain Forest</span></h5>
@@ -247,7 +247,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 
 <section className="carousel-block" style={{"display":"block"}}>
         <div className="col-md-11 col-sm-10">
-            <PlaylistViewThird playlists={[props.plstz]}/>
+            <PlaylistViewThird playlists={[props.plst]}/>
       </div>
     
     
@@ -265,7 +265,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
         </div>
 </div>
 
-<Slickplaylists playlists={props.plstz}/>
+<Slickplaylists playlists={props.plst}/>
 <div >
 {isSearch ? (
     
@@ -288,7 +288,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
     </div>                
 <div id="hidden_playlists" style={{"display":"none"}}>
     </div>
-    <div class="col-12 bottom-show">
+    <div className="col-12 bottom-show">
                 <a href="/explore">Show More</a>
             </div>
 <script>
