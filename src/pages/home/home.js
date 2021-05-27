@@ -7,15 +7,19 @@ import PlaylistCarousel from '../../componets/playlistcarousel/playlistcarousel'
 import PlaylistView from '../../componets/playlistview/playlistview';
 import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviewsecond';
 import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
+import SlickplaylistsExplore from '../../componets/slickplaylistsexplore/slickplaylistsexplore';
 const Home = (props) => {
-    const $=window.jQuery;
+const $=window.jQuery;
 const [isSearch, setIsSearch] = useState(false);
 const [searchTerm, setSearchTerm] = React.useState("");
 const [searchResults, setSearchResults] = React.useState(props.plst);
+const [isPlaylistsNotEmpty, setIsPlaylistsNotEmpty] = React.useState(false);
 const handleChange = event => {
     setSearchTerm(event.target.value);
   };
-
+ if((props.plst!==undefined) && (props.plst.playlists!==undefined) && (props.plst.playlists.playlists!==undefined) &&(props.plst.playlists.playlists instanceof Array) ){
+    setIsPlaylistsNotEmpty(true);
+    }
    React.useEffect(async() => {
         
        // 
@@ -265,7 +269,13 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
         </div>
 </div>
 
-<Slickplaylists playlists={props.plst}/>
+{!isPlaylistsNotEmpty?(
+<SlickplaylistsExplore playlists={props.plst} mainpage={false}/>
+
+):(
+    <div></div>
+)}
+
 <div >
 {isSearch ? (
     

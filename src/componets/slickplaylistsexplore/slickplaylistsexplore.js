@@ -14,12 +14,11 @@ const settings = {
 		dots: false,
 		swipeToSlide: true,
 		infinite: true,
-        slidesToShow: 3,
-  slidesToScroll: 2,
+        
 		variableWidth: true,
       
 	};
-
+var mainpage = props.mainpage? "":"-explore";
     if(isArray){
    return(
        
@@ -28,7 +27,7 @@ const settings = {
   <div className="container-explore">
 
 	      <div className="row">
-          <div className="play-list-names">
+          <div className={"play-list-names"+ (mainpage)}>
             <Slider {...settings}>
             
      

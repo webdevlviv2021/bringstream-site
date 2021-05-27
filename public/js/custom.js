@@ -57,7 +57,7 @@ $(document).ready(function () {
 });
 
 
-$('.play-list-names-explore').not('.slick-initialized').slick(window.slickSettingsExplore);
+
 
 
      
