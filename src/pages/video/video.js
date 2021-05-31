@@ -157,7 +157,7 @@ if(props.plst.playlists !=undefined){
     <div class="video-l-st col-lg-9">
                                                 <h1 id="the_name" in_favorites="0"><span>{videoname}</span>
                             <div class="btn-playlist" add="1">
-                                <img class="iconAddPlaylist" src="/playlist.svg"/>
+                                <img class="iconAddPlaylist" src="/img/playlist.svg"/>
                                 <span class="xs-hidden">Add to playlist</span>
                             </div>
                             <div class="btn-playlist" add="0">
