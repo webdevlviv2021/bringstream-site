@@ -11,7 +11,7 @@ const [videoduration, setVideoDuration] = useState(0);
 
     window.onpopstate = function () {
         console.log(window.history);
-      window.top.history.back();
+    window.top.history.back();
 
     };
 const GetVideoDuration = (seconds)=>
@@ -24,11 +24,11 @@ const GetVideoDuration = (seconds)=>
 }
 const GetVideoStarted = async(data)=>{
 
-   let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=VideoStarted&openKey="+data.aOpenKey;
+    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=VideoStarted&openKey="+data.aOpenKey;
         let action="action=VideoStarted&openKey="+data.aOpenKey;
-         let formData = new FormData();
-         let jsonData =`{"videoid":${videoid},"time":5,"resolution":1080}`;
-         let signature = sha1(action + data.aPrivateKey + jsonData);
+        let formData = new FormData();
+        let jsonData =`{"videoid":${videoid},"time":5,"resolution":1080}`;
+        let signature = sha1(action + data.aPrivateKey + jsonData);
         console.log("privatekey",data.aPrivateKey);
         formData.append('jsonData',jsonData);
         formData.append('signature',signature);
@@ -49,11 +49,11 @@ const GetVideoStarted = async(data)=>{
 
 const GetVideoData = async(data)=>{
 
-   let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
+    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
         let action="action=GetVideoInfo&openKey="+data.aOpenKey;
-         let formData = new FormData();
-         let jsonData =`{"id":${videoid},"fields":{"name":60,"duration":0,"pictures":[640,1920],"hdr":0,"description":120}}`;
-         let signature = sha1(action + data.aPrivateKey + jsonData);
+        let formData = new FormData();
+        let jsonData =`{"id":${videoid},"fields":{"name":60,"duration":0,"pictures":[640,1920],"hdr":0,"description":120}}`;
+        let signature = sha1(action + data.aPrivateKey + jsonData);
         console.log("privatekey",data.aPrivateKey);
         formData.append('jsonData',jsonData);
         formData.append('signature',signature);
@@ -67,12 +67,12 @@ const GetVideoData = async(data)=>{
         })
         .then(data => 
             {console.log("data",data);
-             setVideoInfo(data);
-             setVideoDesc(data.video.description);
-             setVideoName(data.video.name);
-             setVideoDuration(data.video.duration);
-             return data;
-             })
+            setVideoInfo(data);
+            setVideoDesc(data.video.description);
+            setVideoName(data.video.name);
+            setVideoDuration(data.video.duration);
+            return data;
+            })
             .catch(error => {
             console.log("error", error);
         });
@@ -80,53 +80,53 @@ const GetVideoData = async(data)=>{
 const GetVideoInfo = async()=>{
 
 
-     const privateKey="~UniHash-767250902345~";
-     let action = "action=LoginAnonymous";
-     let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
-     let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
+    const privateKey="~UniHash-767250902345~";
+    let action = "action=LoginAnonymous";
+    let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
+    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
-     let formData = new FormData();
-     let signature= sha1(action+privateKey+'{}')
-     formData.append('jsonData','{}');
-     formData.append('signature',signature);
+    let formData = new FormData();
+    let signature= sha1(action+privateKey+'{}')
+    formData.append('jsonData','{}');
+    formData.append('signature',signature);
 
-     await fetch(queryString, {
-         mode:"cors",
-         method:"POST",
-         body:formData
+    await fetch(queryString, {
+        mode:"cors",
+        method:"POST",
+        body:formData
 })
-  .then((response) => {
-     
+.then((response) => {
+    
     return response.json();
-  })
-  .then(data => 
+})
+.then(data => 
     {
 
-       GetVideoData(data);
-       GetVideoStarted(data);
+    GetVideoData(data);
+    GetVideoStarted(data);
         console.log("data",data);
         return data;
     }
 
 
     
-  )
-  .catch(error => {
+)
+.catch(error => {
     console.log("error", error);
-  });
+});
 }
 
 
 var myvideo;
- useEffect(() => {
+    useEffect(() => {
     setVideoInfo(GetVideoInfo());
     console.log(videoinfo.video);
-     
-  },[videoid]);
- 
+    
+},[videoid]);
 
-  var videosrc;
-  var description;
+
+    var videosrc;
+    var description;
 console.log(myvideo);
 if(props.plst.playlists !=undefined){
         props.plst.playlists.forEach(element => {
@@ -151,7 +151,7 @@ if(props.plst.playlists !=undefined){
         
         <div>
         
-       <div id="video_container">
+        <div id="video_container">
         <iframe className="black_back iframebackground" src={videosrc} width="100%" height="532.125" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen="" title={videoname} __idm_id__="819894273" data-ready="true"></iframe>
     </div>
     <div class="video-l-st col-lg-9">

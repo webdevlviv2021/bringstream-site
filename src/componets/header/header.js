@@ -21,8 +21,9 @@ const Header = () => {
                     <ul className="navbar-nav-style navbar-nav mr-auto">
                         <li className="nav-item active"><a href="/" className="nav-link">Home</a></li>
                         <li className="nav-item active"><a href="/about" className="nav-link">About us</a></li>
+                        <li className="nav-item active"><a href="/subscribe" className="nav-link">SUBSCRIBE</a></li>
                         <li className="nav-item active"><a href="/explore" className="nav-link">EXPLORE</a></li>
-                       
+                        
                     </ul>
           
                     

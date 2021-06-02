@@ -8,11 +8,11 @@ import Playlists from '../pages/playlist/playlists';
 import sha1 from 'crypto-js/sha1';
 export default function Pl() {
 
-     const [playlists, setPlaylists] = React.useState([]);
+    const [playlists, setPlaylists] = React.useState([]);
       
 
   React.useEffect(async() => {
-       const GetPlaylistsArray = async(data)=>{
+      const GetPlaylistsArray = async(data)=>{
         let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
         let   action="action=GetPlaylists&openKey="+data.aOpenKey;
         let formData = new FormData();
@@ -21,7 +21,7 @@ export default function Pl() {
         console.log("privatekey",data.aPrivateKey);
         formData.append('jsonData',jsonData);
         formData.append('signature',signature);
-       await fetch(queryString, {
+      await fetch(queryString, {
                 mode:"cors",
                 method:"POST",
                 body:formData
@@ -44,27 +44,27 @@ export default function Pl() {
   const GetLoginAnonymous = async()=>{
 
           const privateKey="~UniHash-767250902345~";
-     let action = "action=LoginAnonymous";
-     let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
-     let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
+    let action = "action=LoginAnonymous";
+    let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
+    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
-     let formData = new FormData();
-     let signature= sha1(action+privateKey+'{}')
+    let formData = new FormData();
+    let signature= sha1(action+privateKey+'{}')
 formData.append('jsonData','{}');
 formData.append('signature',signature);
 
     await fetch(queryString, {
-         mode:"cors",
-         method:"POST",
-         body:formData
+        mode:"cors",
+        method:"POST",
+        body:formData
 })
   .then((response) => {
-     
+    
     return response.json();
   })
   .then(data => 
     { GetPlaylistsArray(data); ;
-         }
+        }
 
 
     
@@ -91,7 +91,7 @@ formData.append('signature',signature);
             <Route exact path='/playlist/:id' render={(props) => (
                             <Playlists {...props} plst={playlists} />
             )} />
-             <Route exact path='/video/:id'  render={(props) => (
+            <Route exact path='/video/:id'  render={(props) => (
                             <Video {...props} plst={playlists} />
             )} />
         </Router>
