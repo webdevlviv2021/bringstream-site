@@ -299,7 +299,7 @@ p {
     height: 660px;
     margin: auto;
     position: relative;
-    top: 90px;
+    top: 20px;/*top 90*/
     z-index: 99;
     text-align: center;
     padding: 10px 0;/*created terry*/

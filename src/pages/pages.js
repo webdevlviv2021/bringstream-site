@@ -95,7 +95,7 @@ formData.append('signature',signature);
             <Route exact path='/video/:id'  render={(props) => (
                             <Video {...props} plst={playlists} />
             )} />
-            <Route exact path='/subscribe'  render={(props) => (
+            <Route exact path='/subscription'  render={(props) => (
                             <Subscribe {...props}  />
             )} />
         </Router>

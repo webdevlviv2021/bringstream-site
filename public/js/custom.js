@@ -1,7 +1,13 @@
 
 
-$(document).resize(function(){
-    console.log('resize');
+$(document).ready(function(){
+    $('.select-price-text').on('click', function() {
+        var price = $('.price-text', this).text();
+            $(this).addClass('chlb-active');
+            $(this).parent().find("p").not(this).removeClass("chlb-active");
+        $('.about-subscription .price-label span').text(price);
+    });
+
 //$('.play-list-names-explore').slick(window.slickSettingsExplore);
 //$('.play-list-names-explore').slick('resize');
 });
@@ -85,11 +91,7 @@ console.log(slideIndexExplore);
 	}
 //$('.play-list-names-explore').slick('refresh');
    
-    $('.select-price-text').on('click', function() {
-        var price = $('.price-text', this).text();
-        
-        $('.about-subscription .price-label span').text(price);
-    })
+    
     
     $("body").on('click', 'a.fps-slide',
              (ev)=>{
@@ -494,6 +496,28 @@ $(document).ready(function () {
 
 	});	*/
 })
+
+    $(document).ready(function () {
+        $('.t1').click(function () {
+            $('.tab1').removeClass('dn');
+            $('.tab1').fadeIn();
+            $('.tab1 .checklabel').first().click();
+            $('.tab2').addClass('dn');
+            $('.t1').addClass('h5active');
+            $('.t2').removeClass('h5active');
+            history.pushState(null, null, '/subscription');
+        });
+        $('.t2').click(function () {
+            $('.tab2').removeClass('dn');
+            $('.tab2').fadeIn();
+            $('.tab2 .checklabel').first().click();
+            $('.tab1').addClass('dn');
+             $('.t2').addClass('h5active');
+            $('.t1').removeClass('h5active');
+            history.pushState(null, null, '/subscription');
+        });
+        $('.h5active').first().click();
+    });
 
 
 

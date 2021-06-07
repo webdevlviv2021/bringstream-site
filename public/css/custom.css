@@ -173,7 +173,7 @@ span.more {
 
 .darkfullwidth.darkfullwidth2 .subscriptionform ,
 .custom-form .subscriptionform {
-    height: auto;
+    /* height: auto; */
 }
 
 .custom-form .subscriptionform{
@@ -253,6 +253,7 @@ span.more {
 
 .formWhiteOnBlack, .formWhiteOnBlack a,formWhiteOnBlack p ,formWhiteOnBlack div{
     color: white;
+    line-height: 20px!important;
 }
 
 .formBlackOnWhite, .formBlackOnWhite p, .formBlackOnWhite a, .formBlackOnWhite div{
