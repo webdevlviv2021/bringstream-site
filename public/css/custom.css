@@ -908,3 +908,11 @@ input#user_name {
 .hideOnPhone{
     font-weight: 200;
 }
+
+.tofrm:hover{
+    color: white!important;
+}
+
+.price-text:hover{
+    color: white!important;
+}
