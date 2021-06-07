@@ -139,6 +139,7 @@ body[logged="1"] .hide-when-logged{
 .div-p{
     margin-bottom: 10px;
     position: relative;
+    font-weight: 300!important;
 }
 .signup-continue-button{
     width: 100% !important;
@@ -3133,6 +3134,9 @@ a.green-textbig {
     color: #c4d700 !important;
 }
 
+p.green-text {
+    font-weight: 300!important;
+}
 a.change_full_name {
     color: #000;
     background: #c4d700;
