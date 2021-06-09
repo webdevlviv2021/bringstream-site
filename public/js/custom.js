@@ -517,6 +517,18 @@ $(document).ready(function () {
             history.pushState(null, null, '/subscription');
         });
         $('.h5active').first().click();
+
+
+            $('.gosignup').click(
+                    function () {
+                        document.location.href = '/subscription';
+                    }
+            );
+            $('.gologin').click(
+                    () => {
+                document.location.href = "/login";
+            }
+            );
     });
 
 
