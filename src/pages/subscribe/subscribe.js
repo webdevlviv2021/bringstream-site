@@ -43,7 +43,7 @@ document.body.classList.add('sub');
                         <a href="#a" class="green-text">after free trial ends billed monthly</a>
                     </p>
                     <p class="checklabel select-price-text" plan="year_hd">
-                       <a class="before" href="#a"></a>
+                        <a class="before" href="#a"></a>
                         <a class="tofrm" href="#a">Annual HD subscription</a>
                         <a href="#a" class="price-text">$49.99 USD</a>
                         <a href="#a" class="green-textbig">30-Days Free </a>
@@ -96,8 +96,7 @@ document.body.classList.add('sub');
         </form>
         </div>
         </div>
-       
-           
+
 
 
         <section className="login-section" >

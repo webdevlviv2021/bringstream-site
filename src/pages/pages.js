@@ -6,6 +6,7 @@ import Explore from '../pages/explore/explore4k';
 import Video from '../pages/video/video';
 import Playlists from '../pages/playlist/playlists';
 import Subscribe from '../pages/subscribe/subscribe';
+import Login from '../pages/login/login';
 import sha1 from 'crypto-js/sha1';
 export default function Pl() {
 
@@ -97,6 +98,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/subscription'  render={(props) => (
                             <Subscribe {...props}  />
+            )} />
+            <Route exact path='/login'  render={(props) => (
+                            <Login {...props}  />
             )} />
         </Router>
     )
