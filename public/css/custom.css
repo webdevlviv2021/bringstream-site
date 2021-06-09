@@ -173,7 +173,7 @@ span.more {
 
 .darkfullwidth.darkfullwidth2 .subscriptionform ,
 .custom-form .subscriptionform {
-    /* height: auto; */
+     height: auto; 
 }
 
 .custom-form .subscriptionform{
@@ -296,7 +296,7 @@ span.more {
     background: #c4d700;
 }
 .loginpage .darkfullwidth.darkfullwidth2{
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 230px);
 }
 .loginpage .custom-form{
     display: none;
