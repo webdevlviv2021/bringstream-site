@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import sha1 from 'crypto-js/sha1';
+import {SITENAME} from '../../componets/sitename/sitename';
 const Video = (props) => {
 //let videoinfo;
 const [videoinfo, setVideoInfo] = useState({});
@@ -24,7 +25,7 @@ const GetVideoDuration = (seconds)=>
 }
 const GetVideoStarted = async(data)=>{
 
-    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=VideoStarted&openKey="+data.aOpenKey;
+    let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=VideoStarted&openKey="+data.aOpenKey;
         let action="action=VideoStarted&openKey="+data.aOpenKey;
         let formData = new FormData();
         let jsonData =`{"videoid":${videoid},"time":5,"resolution":1080}`;
@@ -49,7 +50,7 @@ const GetVideoStarted = async(data)=>{
 
 const GetVideoData = async(data)=>{
 
-    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
+    let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=GetVideoInfo&openKey="+data.aOpenKey;
         let action="action=GetVideoInfo&openKey="+data.aOpenKey;
         let formData = new FormData();
         let jsonData =`{"id":${videoid},"fields":{"name":60,"duration":0,"pictures":[640,1920],"hdr":0,"description":120}}`;
@@ -82,8 +83,8 @@ const GetVideoInfo = async()=>{
 
     const privateKey="~UniHash-767250902345~";
     let action = "action=LoginAnonymous";
-    let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
-    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
+    let endpoint = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?";
+    let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
     let formData = new FormData();
     let signature= sha1(action+privateKey+'{}')

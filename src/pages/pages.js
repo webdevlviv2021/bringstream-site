@@ -8,6 +8,7 @@ import Playlists from '../pages/playlist/playlists';
 import Subscribe from '../pages/subscribe/subscribe';
 import Login from '../pages/login/login';
 import sha1 from 'crypto-js/sha1';
+import {SITENAME} from '../componets/sitename/sitename';
 export default function Pl() {
 
     const [playlists, setPlaylists] = React.useState([]);
@@ -15,7 +16,7 @@ export default function Pl() {
 
   React.useEffect(async() => {
       const GetPlaylistsArray = async(data)=>{
-        let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
+        let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
         let   action="action=GetPlaylists&openKey="+data.aOpenKey;
         let formData = new FormData();
         let jsonData =`{"general":1,"new":1,"favorites":1,"statistic":1,"count":10,"playlists_fields":{"id":0,"name":30,"description":50,"premium":0,"free":0,"duration":0,"pictures":[640,1920],"videos_count":0},"videos":{"count":10,"fields":{"id":0,"name":30,"duration":0,"hdr":0,"pictures":[600],"position":0}}}`;
@@ -47,8 +48,8 @@ export default function Pl() {
 
           const privateKey="~UniHash-767250902345~";
     let action = "action=LoginAnonymous";
-    let endpoint = "https://4krelax.bringstream.com/Engine/apic/apic.php?";
-    let queryString = "https://4krelax.bringstream.com/Engine/apic/apic.php?"+action;
+    let endpoint = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?";
+    let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
     let formData = new FormData();
     let signature= sha1(action+privateKey+'{}')
