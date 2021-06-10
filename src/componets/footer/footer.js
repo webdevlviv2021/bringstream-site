@@ -1,12 +1,13 @@
 import React from 'react';
 import './footer.css'
+import {EXPANDED_SITENAME} from '../../componets/sitename/sitename';
 
 
 const Footer = () => {
-    return (
-        
-        <footer className="footer">
-   	<div className="container">
+     return (
+     
+     <footer className="footer">
+     <div className="container">
 		<div className="row row-f-pl justify-content-md-center">
 			
 			<div className="col-lg-7">
@@ -22,15 +23,16 @@ const Footer = () => {
                          <li><a href="support">Support</a></li>
                          <li><a href="faq">FAQ</a></li>
                     </ul>
-                    <p className="footer-copy">© 2019 <a href="https://4krelax.com/">4K Nature Relax TV</a>. All Rights Reserved </p>
+                    <p className="footer-copy">© 2019 
+                    <a href="https://4krelax.com/">{EXPANDED_SITENAME}</a>. All Rights Reserved </p>
                </div>
 
           </div>
           
      </div>
 </footer>
-        
-    )
+     
+     )
 }
 
 export default Footer;

@@ -16,44 +16,40 @@ const settings = {
 		infinite: true,
         
 		variableWidth: true,
-      
+    
 	};
 var mainpage = props.mainpage? "":"-explore";
     if(isArray){
-   return(
-       
- <section className="playlists-s">
- 
-  <div className="container-explore">
+    return(
 
-	      <div className="row">
-          <div className={"play-list-names"+ (mainpage)}>
+    <section className="playlists-s">
+
+    <div className="container-explore">
+
+	    <div className="row">
+        <div className={"play-list-names"+ (mainpage)}>
             <Slider {...settings}>
             
-     
-      {props.playlists.playlists.map((item)=>{
+    
+    {props.playlists.playlists.map((item)=>{
 
             let itemlink ="playlist/"+item.id;
             return <div className="item" style={{"max-width":"240px","display":"inline-block"}}>
                 <a href={itemlink} tabIndex="-1">{item.name}</a>
             </div>
-           })}
-           
-
-          
-          
-           
+        })}
+        
             </Slider>
     </div>
-  
-       </div>
-       </div>
-       </section>
-   );
-   }
-   else {
-       return(<div></div>);
-   }
+
+    </div>
+    </div>
+    </section>
+);
+}
+    else {
+        return(<div></div>);
+}
 
 }
 

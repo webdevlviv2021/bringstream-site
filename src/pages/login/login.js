@@ -1,4 +1,5 @@
 import React from 'react';
+import {EXPANDED_SITENAME} from '../../componets/sitename/sitename';
 
 const Login = () => {
 document.body.classList.add('loginpage');
@@ -90,7 +91,7 @@ document.body.classList.add('loginpage');
         </form>
         <form id="loginform" className="formWhiteOnBlack formVertical" >
             <div className="loginform subscriptiontab" style={{"display": "block"}} >
-                <h3>Login to <span>4K Nature Relax TV</span></h3>
+                <h3>Login to <span>{EXPANDED_SITENAME}</span></h3>
                 <div className="div-p"><input type="text" className="user-email" name="email" placeholder="Email Address" required="true" pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" /></div>
                 <div className="div-p"><input type="submit" value="Login" /></div>
                 <div className="div-p">
@@ -108,7 +109,7 @@ document.body.classList.add('loginpage');
 
         <form id="activateform" >
                 <div className="activateform subscriptiontab" style={{"display": "none"}}>
-                <h3>Login to <span>4K Nature Relax TV</span></h3>
+                <h3>Login to <span>{EXPANDED_SITENAME}</span></h3>
                 <div className="div-p"><input value="" name="email" type="text" placeholder="Email Address" required="true" pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" /></div>
                 <div className="div-p"><input type="text" name="code" placeholder="Activation code" required="true" pattern="^[0-9]{5,9}$" /></div>
                 <div className="div-p"><input type="submit" value="Login" /></div>
@@ -116,7 +117,7 @@ document.body.classList.add('loginpage');
             </div>      
         </form>        
         <div className="regformsuccess subscriptiontab formWhiteOnBlack"  style={{"display": "none;"}}>
-            <h3>Thank you for subscribing <span>4K Nature Relax TV</span></h3>
+            <h3>Thank you for subscribing <span>{EXPANDED_SITENAME}</span></h3>
             <div className="div-p" >You free trial account has now been activated. Once it has ended,<br/>
             you credit card will be charged $8.99 per mounth. You will be billed once per month or year, with the option to unsubscribe at any time.</div>
             <div className="div-p"><input type="submit" id="startwatch" value="Start Watching Now" /></div>        
@@ -136,7 +137,7 @@ document.body.classList.add('loginpage');
                     </div>     
                 <div className="div-p" >Check your spam or junk folder if you don't see the email.
                 </div>
-         </div>
+        </div>
     </div>
 </div> 
 </React.Fragment>

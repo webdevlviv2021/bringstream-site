@@ -8,6 +8,8 @@ import PlaylistView from '../../componets/playlistview/playlistview';
 import PlaylistViewSecond from '../../componets/playlistviewsecond/playlistviewsecond';
 import Slickplaylists from '../../componets/slickplaylists/slickplaylists';
 import SlickplaylistsExplore from '../../componets/slickplaylistsexplore/slickplaylistsexplore';
+import {EXPANDED_SITENAME, EXPANDED_SITENAME2} from '../../componets/sitename/sitename';
+
 const Home = (props) => {
 const $=window.jQuery;
 const [isSearch, setIsSearch] = useState(false);
@@ -15,165 +17,164 @@ const [searchTerm, setSearchTerm] = React.useState("");
 const [searchResults, setSearchResults] = React.useState(props.plst);
 const [isPlaylistsNotEmpty, setIsPlaylistsNotEmpty] = React.useState(false);
 const handleChange = event => {
-    setSearchTerm(event.target.value);
-  };
- if((props.plst!==undefined) && (props.plst.playlists!==undefined) && (props.plst.playlists.playlists!==undefined) &&(props.plst.playlists.playlists instanceof Array) ){
-    setIsPlaylistsNotEmpty(true);
-    }
-   React.useEffect(async() => {
-        
-       // 
+setSearchTerm(event.target.value);
+};
+     if((props.plst!==undefined) && (props.plst.playlists!==undefined) && (props.plst.playlists.playlists!==undefined) &&(props.plst.playlists.playlists instanceof Array) ){
+     setIsPlaylistsNotEmpty(true);
+}
+     React.useEffect(async() => {
+     
+     
           $('.owl-carousel-c').owlCarousel({nav:true,
-        center:true,
-        items:4,
-        loop: true,
-        slideBy:2,
-        margin: 10,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true,
-                 loop: true,
-            },
-            600: {
-                items: 2,
-                nav: true,
-                 loop: true,
-            },
-            1000: {
-                items: 3,
-                nav: true,
-                 loop: true,
-            },
-            1200: {
-                items: 4,
-                nav: true,
-                 loop: true,
-            }
-        }}  );
-        if(searchTerm=="") 
+     center:true,
+     items:4,
+     loop: true,
+     slideBy:2,
+     margin: 10,
+     responsiveClass: true,
+     responsive: {
+          0: {
+               items: 1,
+               nav: true,
+               loop: true,
+          },
+          600: {
+               items: 2,
+               nav: true,
+               loop: true,
+          },
+          1000: {
+               items: 3,
+               nav: true,
+               loop: true,
+          },
+          1200: {
+               items: 4,
+               nav: true,
+               loop: true,
+          }
+     }}  );
+     if(searchTerm=="") 
      setSearchResults(props.plst);
-    });
+});
 
 
-    React.useEffect(async() => {
-      
+     React.useEffect(async() => {
+     
      console.log("effect props",props.plst.playlists);
      if(props.plst.playlists instanceof Array)
      {
-    const results = props.plst.playlists.filter(playlist =>
+     const results = props.plst.playlists.filter(playlist =>
      {
- 
-         return playlist.videos.filter(video=>
-         {return video.name.toLowerCase().includes(searchTerm.toLowerCase());}
-         ).length>0 ||playlist.name.toLowerCase().includes(searchTerm)||playlist.description.toLowerCase().includes(searchTerm.toLowerCase())
-   
+
+     return playlist.videos.filter(video=>
+     {return video.name.toLowerCase().includes(searchTerm.toLowerCase());}
+     ).length>0 ||playlist.name.toLowerCase().includes(searchTerm)||playlist.description.toLowerCase().includes(searchTerm.toLowerCase())
+
      }
-    
-    );
-    console.log("results", results.length);
+
+);
+     console.log("results", results.length);
 
      ;
-      if(results.length>0)
-      {setSearchResults({"playlists":results});}
-      else {
+     if(results.length>0)
+     {setSearchResults({"playlists":results});}
+     else {
           if(results.length==0)        setSearchResults({"playlists":{}});
-        $('.owl-carousel-c').owlCarousel({nav:true,
-        center:true,
-        items:4,
-        loop: true,
-        slideBy:2,
-        margin: 10,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true,
-                 loop: true,
-            },
-            600: {
-                items: 2,
-                nav: true,
-                 loop: true,
-            },
-            1000: {
-                items: 3,
-                nav: true,
-                 loop: true,
-            },
-            1200: {
-                items: 4,
-                nav: true,
-                 loop: true,
-            }
-        }}  );
-      }
-       
-    }
-    else {
-        setSearchResults(props.plst);
-      
-    }
-    
+     $('.owl-carousel-c').owlCarousel({nav:true,
+     center:true,
+     items:4,
+     loop: true,
+     slideBy:2,
+     margin: 10,
+     responsiveClass: true,
+     responsive: {
+          0: {
+          items: 1,
+               nav: true,
+               loop: true,
+          },
+          600: {
+               items: 2,
+               nav: true,
+               loop: true,
+          },
+          1000: {
+               items: 3,
+               nav: true,
+               loop: true,
+          },
+          1200: {
+               items: 4,
+               nav: true,
+               loop: true,
+          }
+     }}  );
+     }
+     
+}
+     else {
+     setSearchResults(props.plst);
+     
+}
 
-   $('.owl-carousel-c').owlCarousel({nav:true,
-        center:true,
-        items:4,
-        loop: true,
-        slideBy:2,
-        margin: 10,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true,
-                 loop: true,
-            },
-            600: {
-                items: 2,
-                nav: true,
-                 loop: true,
-            },
-            1000: {
-                items: 3,
-                nav: true,
-                 loop: true,
-            },
-            1200: {
-                items: 4,
-                nav: true,
-                 loop: true,
-            }
-        }}  );
-  }, [searchTerm]);
 
-    return (
-        <div>
-            <header className="top_header ha-waypoint ha-header-small header35">
+     $('.owl-carousel-c').owlCarousel({nav:true,
+          center:true,
+          items:4,
+          loop: true,
+          slideBy:2,
+          margin: 10,
+          responsiveClass: true,
+          responsive: {
+          0: {
+               items: 1,
+               nav: true,
+               loop: true,
+          },
+          600: {
+               items: 2,
+               nav: true,
+               loop: true,
+          },
+          1000: {
+               items: 3,
+               nav: true,
+               loop: true,
+          },
+          1200: {
+               items: 4,
+               nav: true,
+               loop: true,
+          }
+     }}  );
+}, [searchTerm]);
 
-         <div id="slides" style={{"position":"relative","overflow":"hidden","width":"100%","height":"937px"}}>
-             <div className="slides-control" style={{"position":"relative","height":"100%","width":"100%"}}><ul className="slides-container" style={{"margin":"0px","padding":"0px","listStyle":"none","position":"relative","height":"100%","display":"block"}}>
+     return (
+     <div>
+          <header className="top_header ha-waypoint ha-header-small header35">
 
-                 <li style={{"display":"block","left":"1021px","position":"absolute","overflow":"hidden","height":"100%","width":"1021px","top":"0px","zIndex":"2","opacity":"1"}}>
-                     <img src="img/w-1.jpg" alt="4k nature relax tv slider" style={{"backfaceVisibility":"hidden","position":"absolute","left":"-616.5px","top":"0px","zIndex":"-1","maxWidth":"none","height":"937px","width":"2254.44px"}}/>
+     <div id="slides" style={{"position":"relative","overflow":"hidden","width":"100%","height":"937px"}}>
+     <div className="slides-control" style={{"position":"relative","height":"100%","width":"100%"}}><ul className="slides-container" style={{"margin":"0px","padding":"0px","listStyle":"none","position":"relative","height":"100%","display":"block"}}>
+
+               <li style={{"display":"block","left":"1021px","position":"absolute","overflow":"hidden","height":"100%","width":"1021px","top":"0px","zIndex":"2","opacity":"1"}}>
+                    <img src="img/w-1.jpg" alt="4k nature relax tv slider" style={{"backfaceVisibility":"hidden","position":"absolute","left":"-616.5px","top":"0px","zIndex":"-1","maxWidth":"none","height":"937px","width":"2254.44px"}}/>
                     
-                     <div className="content-slides">
+                    <div className="content-slides">
                          <div className="container-custom">
-                             <div className="row">
-                                 <div className="col-sm-12 col-md-6">
-                                     <div className="container-animation cn-text">
-                                         <h3>Love the Earth – Relax with Nature!v1</h3>
-                                         <strong>Turn on your TVs and stream relax videos in PREMIUM 4K &amp; 4K HDR quality.</strong>
-                                         <div className="cn-text-style">
-                                              <p>Take a deep breath, escape to beautiful natural destinations and experience nature like never before with a new app from Pro Art inc. An incredible collection of 4K &amp; 4K HDR nature relax videos with more than 1000 hours of sensational nature relax ad-free videos bring natural wonders closer!</p>
-                                         </div>
-                                    </div>
-                               </div>
-                               <div className=" col-sm-12 col-md-6">
+                              <div className="row">
+                                   <div className="col-sm-12 col-md-6">
+                                   <div className="container-animation cn-text">
+                                        <h3>Love the Earth – Relax with Nature!v1</h3>
+                                        <strong>Turn on your TVs and stream relax videos in PREMIUM 4K &amp; 4K HDR quality.</strong>
+                                        <div className="cn-text-style">
+                                        <p>Take a deep breath, escape to beautiful natural destinations and experience nature like never before with a new app from Pro Art inc. An incredible collection of 4K &amp; 4K HDR nature relax videos with more than 1000 hours of sensational nature relax ad-free videos bring natural wonders closer!</p>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div className=" col-sm-12 col-md-6">
                                    <div id="embed_container" className=" embed_container container-animation cn-video">
 								<div className="video-frame2"><iframe title="sometitle" className="black_back" type="text/html" src="https://player.vimeo.com/video/422874793" id="video" width="490" height="274" frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe></div>
-                                       
                                    </div>
                               </div>
                          </div>
@@ -214,8 +215,8 @@ const handleChange = event => {
                          <div className="row">
                               <div className=" col-md-6 col-sm-12 col-xs-12">
                                    <div className="content__wrapper cw-style">
-                                        <h4>4K Nature Relax TV is one of the first services to stream 4K &amp; 4K HDR content.</h4>
-                                        <p>Pro Art inc. presents a new app that takes you closer to Nature. Open a virtual window into nature and go on a journey to the most marvelous natural wonders and breathtaking places of the world! Everything is possible with 4K Nature Relax TV! Hours and hours of exciting and stunning nature documentaries as well as 4K nature relax videos will bring peace to your mind and harmony into your life. Be with Nature! Stay with Us!</p>
+                                        <h4>{EXPANDED_SITENAME} is one of the first services to stream 4K &amp; 4K HDR content.</h4>
+                                        <p>Pro Art inc. presents a new app that takes you closer to Nature. Open a virtual window into nature and go on a journey to the most marvelous natural wonders and breathtaking places of the world! Everything is possible with {EXPANDED_SITENAME}! Hours and hours of exciting and stunning nature documentaries as well as 4K nature relax videos will bring peace to your mind and harmony into your life. Be with Nature! Stay with Us!</p>
                                         <a className="cw-botton" href="about">Read more</a>
                                    </div>            
                               </div> 
@@ -223,38 +224,38 @@ const handleChange = event => {
                                    <div className="content__wrapper">
                                         <ul className="more-inf">
                                              <li><h4>One Subscription for all Your Devices</h4></li>
-                                             <li><p>Access to the 4K Nature Relax TV app for phones, tablets &amp; TVs</p></li>
+                                             <li><p>Access to the {EXPANDED_SITENAME} app for phones, tablets &amp; TVs</p></li>
                                              <li><p>Over-the-Top (OTT) / Video-on-Demand (VOD) </p></li>
                                              <li><p>Newly added content every week</p></li>
                                              <li><p>Access of more than 1000 hours videos in 4K &amp; 4K HDR quality.</p></li>
-                                             <li><p>Ease your mind and restore yourself together with 4K Nature Relax TV.</p></li>
+                                             <li><p>Ease your mind and restore yourself together with {EXPANDED_SITENAME}.</p></li>
                                              
                                         </ul>
                                    </div>            
                               </div> 
                          </div>
                     </div>
-                 <section className="free-preview" style={{"backgroundImage":"url('https://i.vimeocdn.com/video/904334858_640x360.jpg?r=pad')","display":"block"}}>
-    <div className="free-preview-bg">
-        <div className="fp-slider">
+               <section className="free-preview" style={{"backgroundImage":"url('https://i.vimeocdn.com/video/904334858_640x360.jpg?r=pad')","display":"block"}}>
+     <div className="free-preview-bg">
+     <div className="fp-slider">
           
-            <PlaylistViewFourth playlists={[props.plst]}/>
-        </div>
-        <div className="fp-text">
-                        <h5>FREE PREVIEW - <span id="free_preview_name">Hoh Rain Forest</span></h5>
-            <p><span id="free_preview_duration"> 0:01:03</span> | <span id="free_preview_description">Free 4K Short Preview
-Producer: Roman Khomlyak, Pro Art inc.</span></p>
-            <a href="/video-hoh-rain-forest-279244369-1" className="button" id="watch_free_preview"><i className="fa fa-play-circle-o fa-lg" aria-hidden="true"></i> Watch Free Preview</a>
-        </div>
-    </div>
+          <PlaylistViewFourth playlists={[props.plst]}/>
+     </div>
+     <div className="fp-text">
+                    <h5>FREE PREVIEW - <span id="free_preview_name">Hoh Rain Forest</span></h5>
+          <p><span id="free_preview_duration"> 0:01:03</span> | <span id="free_preview_description">Free 4K Short Preview
+          Producer: Roman Khomlyak, Pro Art inc.</span></p>
+          <a href="/video-hoh-rain-forest-279244369-1" className="button" id="watch_free_preview"><i className="fa fa-play-circle-o fa-lg" aria-hidden="true"></i> Watch Free Preview</a>
+     </div>
+     </div>
 </section>
 
 <section className="carousel-block" style={{"display":"block"}}>
-        <div className="col-md-11 col-sm-10">
-            <PlaylistViewThird playlists={[props.plst]}/>
-      </div>
-    
-    
+     <div className="col-md-11 col-sm-10">
+          <PlaylistViewThird playlists={[props.plst]}/>
+     </div>
+
+
 </section>               </li>
                <li className="" style={{"display":"none"}}>
 <div className="content__wrapper">
@@ -262,57 +263,57 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 
 <div className="mm justify-content-center">
 <div className=" search-div col-md-11 mw " align="center">
-            <span>
-                <img src="/img/search.svg" alt=""/>
-                <input type="text" id="search_video_s" name="search_video" placeholder="Search video" onChange={handleChange} /> 
-            </span>
-        </div>
+          <span>
+               <img src="/img/search.svg" alt=""/>
+               <input type="text" id="search_video_s" name="search_video" placeholder="Search video" onChange={handleChange} /> 
+          </span>
+     </div>
 </div>
 
 {!isPlaylistsNotEmpty?(
 <SlickplaylistsExplore playlists={props.plst} mainpage={false}/>
 
 ):(
-    <div></div>
+<div></div>
 )}
 
 <div >
 {isSearch ? (
-    
+
 <div className=" playlists-scrollbox-undef">
 
-        </div>
-  
+     </div>
+
 ):(
 
-  
+
 <div className=" playlists-scrollbox">
 <PlaylistView playlists={searchResults}/>
-        </div>
-    
+     </div>
+
 )}
 </div>
 
 
 </div>
-    </div>                
+</div>                
 <div id="hidden_playlists" style={{"display":"none"}}>
-    </div>
-    <div className="col-12 bottom-show">
-                <a href="/explore">Show More</a>
-            </div>
+</div>
+<div className="col-12 bottom-show">
+               <a href="/explore">Show More</a>
+          </div>
 <script>
-    $(function () {
-        setTimeout(function () {
+     $(function () {
+     setTimeout(function () {
 
-            var hp = $('#hidden_playlists .item-list');
-            var pp = $('.playlists-scrollbox');
-            pp.append(hp);
+          var hp = $('#hidden_playlists .item-list');
+          var pp = $('.playlists-scrollbox');
+          pp.append(hp);
 //    $.each(hp, function(i,v){
 //        pp.append(v);
 //    });
 }, 1000)
-    });
+     });
 </script>               </li>
           </ul>
      </div>
@@ -320,7 +321,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 <section className="main-sign-up">
      <div className="signup-text">
           <h5>Love the Earth – Relax with Nature!</h5>
-          <p>Behold the beauty of nature! <b>Relax and restore yourself together with 4K Nature Relax TV.</b> Experience the majestic landscapes, enjoy the stunning views of the mountains, explore the diverse wildlife, listen to the soothing sounds of the rushing waterfalls and calm lakes, enjoy birds singing in the deep forests and more. <b>4K Relax TV brings peace and restores your inner peace and harmony in your life!</b></p>
+          <p>Behold the beauty of nature! <b>Relax and restore yourself together with {EXPANDED_SITENAME}.</b> Experience the majestic landscapes, enjoy the stunning views of the mountains, explore the diverse wildlife, listen to the soothing sounds of the rushing waterfalls and calm lakes, enjoy birds singing in the deep forests and more. <b>{EXPANDED_SITENAME2} brings peace and restores your inner peace and harmony in your life!</b></p>
           <a href="subscription" className="button">Sign Up Now</a>
      </div>
 
@@ -329,7 +330,7 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 <div className="more-inform my-2 my-lg-0">
 <p className="footer-follow"></p><h6>Available on multiple devices.</h6><p></p>
      <div className="social">
-        
+     
 
           <a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><img src="/img/platforms/android.png" alt="android app"/></a>
           <a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8" target="_blank" rel="nofollow"><img src="/img/platforms/iphone.png" alt="iphone app"/></a>
@@ -343,9 +344,9 @@ Producer: Roman Khomlyak, Pro Art inc.</span></p>
 
      </div>
 </div>
-    </div>
-        </div>
-    )
+</div>
+     </div>
+)
 }
 
 export default Home;

@@ -7,11 +7,11 @@ const $=window.jQuery;
         
 
 
-  
 
 
 
-       if(playlists instanceof Object && playlists.playlists instanceof Array && playlists.playlists.length>0 && playlists.playlists[0].playlists instanceof Array)
+
+        if(playlists instanceof Object && playlists.playlists instanceof Array && playlists.playlists.length>0 && playlists.playlists[0].playlists instanceof Array)
     {
     
 
@@ -51,17 +51,17 @@ const $=window.jQuery;
                     }
                 }}  );
     return <NewestUploads link={link} playlistname={name} videos={videos}/>
-      
+    
 });
 
     return (
             listItems
     );
-     }
+    }
 
-     else {
-         return (<div></div>);
-     }
+    else {
+        return (<div></div>);
+    }
 }
 
 export default PlaylistViewThird;

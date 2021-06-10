@@ -23,7 +23,7 @@ console.log(videos);
                     </div>
                             <OwlCarousel className='owl-carousel-c-second videos-list owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
                             <OwlCarouselVideoItems items={videos.length} videos={videos} />
-         
+        
                             </OwlCarousel>
 </div>
     )

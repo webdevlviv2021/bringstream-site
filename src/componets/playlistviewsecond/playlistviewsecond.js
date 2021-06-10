@@ -8,7 +8,7 @@ console.log(playlists);
     
 
 
-  if(Object.keys(playlists.playlists.playlists).length===0){ return(<div>Nothing found</div>)};
+    if(Object.keys(playlists.playlists.playlists).length===0){ return(<div>Nothing found</div>)};
     const listItems = 
     playlists.playlists.playlists.map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
@@ -18,11 +18,11 @@ console.log(playlists);
     return (
             listItems
     );
-     }
+    }
 
-     else {
-         return (<div></div>);
-     }
+    else {
+        return (<div></div>);
+    }
 }
 
 export default PlaylistViewSecond;

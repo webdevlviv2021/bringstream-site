@@ -18,7 +18,7 @@
         
       // }
 
- 
+
 console.log(playlists.plst.playlists);
 if(playlists.plst.playlists!=undefined)
   {
@@ -76,15 +76,7 @@ if(playlists.plst.playlists!=undefined)
   </div>);
     })
   }
-
-
-
-
-
-
-    
-    
-
+  
   </div>
   </div>
   </section>

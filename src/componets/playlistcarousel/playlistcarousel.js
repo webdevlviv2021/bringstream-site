@@ -23,7 +23,7 @@ const PlaylistCarousel = ({link,playlistname,videos}) => {
                     </div>
                             <OwlCarousel className='owl-carousel-c videos-list owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
                             <OwlCarouselVideoItems items={videos.length} videos={videos} />
-         
+        
                             </OwlCarousel>
 </div>
     )

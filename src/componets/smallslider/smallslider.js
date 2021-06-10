@@ -9,10 +9,9 @@ const SmallSlider = ({link,playlistname,videos}) => {
     return (
 <div className="item-list-adv">
         
-                            <OwlCarousel className='owl-carousel-c-fourth videos-list-adv owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
-                            <OwlCarouselVideoItemsSmall items={videos.length} videos={videos} />
-         
-                            </OwlCarousel>
+    <OwlCarousel className='owl-carousel-c-fourth videos-list-adv owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
+    <OwlCarouselVideoItemsSmall items={videos.length} videos={videos} />
+    </OwlCarousel>
 </div>
     )
 }
