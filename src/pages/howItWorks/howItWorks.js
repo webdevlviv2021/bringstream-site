@@ -1,4 +1,5 @@
 import React from 'react';
+import {EXPANDED_SITENAME, EXPANDED_SITENAME3} from '../../componets/sitename/sitename';
 
 const HowItWorks = () => {
 
@@ -30,6 +31,27 @@ const HowItWorks = () => {
 
             </ul>
         </div>
+
+        {/* sub text */}
+
+        <div class="h-sub-texts">
+    <div class="h-col-2">
+        <h5>Get access to all {EXPANDED_SITENAME3} content</h5>
+        <p>- 4K &amp; 4K HDR quality relaxation videos</p>
+        <p>- Access 4K content without limitations</p>
+        <p>- More than 1000 hours of nature relaxation videos</p>
+        <p>- Content is updated each week</p>
+    </div>
+<div class="h-col-2">
+        <h5>Watch 4K content on your device</h5>
+
+        <p>- One Subscription for all Your Devices</p>
+        <p>- Available on multiple devices: Smart TV, laptop, tablet, mobile.</p>
+        <p>- Download and install the {EXPANDED_SITENAME} app from Play Market or AppStore, Roku, Amazon or Samsung Smart TV</p>
+        <p>- Click on the image of the video you want to watch.</p>
+        <p>- The video will be loaded and you can start watching it immediately.</p>
+    </div>
+</div>
     
         </React.Fragment>
     )
