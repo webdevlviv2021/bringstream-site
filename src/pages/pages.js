@@ -11,6 +11,8 @@ import sha1 from 'crypto-js/sha1';
 import {SITENAME} from '../componets/sitename/sitename';
 import HowItWorks from './howItWorks/howItWorks';
 import Policy from './policy/policy';
+import Terms from './terms/terms';
+
 export default function Pl() {
 
     const [playlists, setPlaylists] = React.useState([]);
@@ -110,6 +112,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/policy'  render={(props) => (
                             <Policy {...props}  />
+            )} />
+            <Route exact path='/terms'  render={(props) => (
+                            <Terms {...props}  />
             )} />
         </Router>
     )
