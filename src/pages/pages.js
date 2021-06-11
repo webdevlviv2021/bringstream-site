@@ -10,6 +10,7 @@ import Login from '../pages/login/login';
 import sha1 from 'crypto-js/sha1';
 import {SITENAME} from '../componets/sitename/sitename';
 import HowItWorks from './howItWorks/howItWorks';
+import Policy from './policy/policy';
 export default function Pl() {
 
     const [playlists, setPlaylists] = React.useState([]);
@@ -18,7 +19,7 @@ export default function Pl() {
   React.useEffect(async() => {
       const GetPlaylistsArray = async(data)=>{
         let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
-        let   action="action=GetPlaylists&openKey="+data.aOpenKey;
+        let action="action=GetPlaylists&openKey="+data.aOpenKey;
         let formData = new FormData();
         let jsonData =`{"general":1,"new":1,"favorites":1,"statistic":1,"count":10,"playlists_fields":{"id":0,"name":30,"description":50,"premium":0,"free":0,"duration":0,"pictures":[640,1920],"videos_count":0},"videos":{"count":10,"fields":{"id":0,"name":30,"duration":0,"hdr":0,"pictures":[600],"position":0}}}`;
         let signature = sha1(action + data.aPrivateKey + jsonData);
@@ -106,6 +107,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/howItWorks'  render={(props) => (
                             <HowItWorks {...props}  />
+            )} />
+            <Route exact path='/policy'  render={(props) => (
+                            <Policy {...props}  />
             )} />
         </Router>
     )
