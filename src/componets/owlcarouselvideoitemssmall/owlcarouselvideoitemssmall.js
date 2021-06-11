@@ -34,8 +34,8 @@ const OwlCarouselVideoItemsSmall = (props) => {
        }
     return  <div key={item.id} className="item" onClick={(e) => handleClick(item.name,itemlink,item.pictures["600"],item.duration, e)}>
                               
-                                    <div className={"c-item-style " + (itemstyle)}>
-                                        
+                                    <div className={"c-item-style"}>
+                                        <div className="marks"><div className="free"></div></div>
                                         <img src={item.pictures["600"]} alt={item.name}/> 
                                     </div>
                                    
