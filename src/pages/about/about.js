@@ -1,4 +1,6 @@
 import React from 'react'
+import HowItWorks from '../howItWorks/howItWorks';
+
 import {EXPANDED_SITENAME} from '../../componets/sitename/sitename';
 const About = () => {
 
@@ -17,7 +19,7 @@ const About = () => {
 
      <div class="box2-inf-v">
                     <a className="box2-i-star" href="subscription">Free 30 days trial!</a>
-                    <a className="box2-i-more" href="how">How it Works</a>
+                    <a className="box2-i-more" href="howItWorks">How it Works</a>
      </div>
 
 </div>

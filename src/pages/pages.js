@@ -9,6 +9,7 @@ import Subscribe from '../pages/subscribe/subscribe';
 import Login from '../pages/login/login';
 import sha1 from 'crypto-js/sha1';
 import {SITENAME} from '../componets/sitename/sitename';
+import HowItWorks from './howItWorks/howItWorks';
 export default function Pl() {
 
     const [playlists, setPlaylists] = React.useState([]);
@@ -102,6 +103,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/login'  render={(props) => (
                             <Login {...props}  />
+            )} />
+            <Route exact path='/howItWorks'  render={(props) => (
+                            <HowItWorks {...props}  />
             )} />
         </Router>
     )
