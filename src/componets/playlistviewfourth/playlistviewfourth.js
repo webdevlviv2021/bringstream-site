@@ -36,7 +36,7 @@ const PlaylistViewFourth = (playlists) => {
                         loop: true,
                     }
                 }}  );
-    return <SmallSlider link={link} playlistname={name} videos={videos}/>
+    return <SmallSlider link={link} playlistname={name} videos={videos} id={id} />
 });
 
 
