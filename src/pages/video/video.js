@@ -154,12 +154,15 @@ if(props.plst.playlists !=undefined){
         else { videosrc="#";}
     return (
         
-        <div>
+        <React.Fragment>
         
         <div id="video_container">
-        <iframe className="black_back iframebackground" src={videosrc} width="100%" height="532.125" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen="" title={videoname} __idm_id__="819894273" data-ready="true"></iframe>
+        <iframe className="black_back iframebackground" src={videosrc} width="100%" height="624.125" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen="" title={videoname} __idm_id__="819894273" data-ready="true"></iframe>
     </div>
-    <div class="video-l-st col-lg-9">
+    <section class="video-list">
+        <div class="container">
+            <div class="row">
+                <div class="video-l-st col-lg-9">
                                                 <h1 id="the_name" in_favorites="0"><span>{videoname}</span>
                             <div class="btn-playlist" add="1">
                                 <img class="iconAddPlaylist" src="/img/playlist.svg"/>
@@ -179,12 +182,45 @@ if(props.plst.playlists !=undefined){
                                 {videodesc}</p>
                             <span class="dn more"><span>Show more</span><strong>
                                     <img src="/svg.svg"/>
-                                </strong></span>
+                                </strong>
+                            </span>
                         </div>
-                    </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+                <div class="col-lg-3">
+                        <div class="info-soc">
+                            <p>Share with friends</p>
+                            <div class="shareThis">
+                                <div class="simpleSocialShareMainBlockContainer">
+                                    <div class="simpleSocialShareTable">
+                                        <div class="simpleSocialShareSitesContainer simpleSocialShareTableCell clearfix">
+                                            <ul>
+                                                <li class="simpleSocialShareEmail simpleSocialShareSiteContainer" title="Share via Email"></li>
+                                                <li class="simpleSocialShareFacebook simpleSocialShareSiteContainer" title="Share via Facebook"></li>
+                                                <li class="simpleSocialShareTwitter simpleSocialShareSiteContainer" title="Share via Twitter"></li>
+                                                <li class="simpleSocialShareGoogle simpleSocialShareSiteContainer" title="Share via Google"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-ios">
+                            <p>Watch anywhere, anytime</p>
+                            <ul>
+                                <li><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8" target="_blank" rel="nofollow"><i className="fa fa-apple"></i></a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><i className="fa fa-android"></i></a></li>
+                                <li><a href="https://www.amazon.com/Pro-Art-inc-Nature-Relax/dp/B074MC1G9X" target="_blank" rel="nofollow"><i className="fa fa-amazon"></i></a></li>
+                                <li><a href="#"><i className="fa fa-chrome"></i></a></li>
+                                <li><a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><img src="/img/roku-logo.png" alt="roku-app"/></a></li>
+                            </ul>
+                        </div>
+                  </div>
+            </div>
+        </div>
+      </section>
+      <script src="https://player.vimeo.com/api/player.js"></script>
 
-    </div>
+    </React.Fragment>
     )
 }
 

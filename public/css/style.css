@@ -1804,7 +1804,12 @@ p {
 -----------------------------------------*/
 
 .video-list {
-    margin: 30px 0;/*fixed by terry bylo70px*/
+    margin: 30px 30px;/*fixed by terry bylo70px*/
+}
+
+.myvideo-listrow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .video-l-st h4{
@@ -2134,6 +2139,15 @@ a.fps-slide{
         width: 100%;
         margin-left: 0px;
 
+    }
+    .video-list {
+        margin :30px 0px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .video-list {
+        margin :30px 0px;
     }
 }
 /*created by terry*/
@@ -3363,9 +3377,7 @@ button, input, optgroup, select, textarea {
     transform: translateY(-50%);
 }
 
-.container {
-    max-width: 93% !important;
-}
+
 .container-explore {
     max-width: 95% !important;
     width: 100%;
