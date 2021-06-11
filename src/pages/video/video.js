@@ -128,6 +128,8 @@ var myvideo;
 
     var videosrc;
     var description;
+    var playlistname;
+    var playlistid;
 console.log(myvideo);
 if(props.plst.playlists !=undefined){
         props.plst.playlists.forEach(element => {
@@ -135,6 +137,8 @@ if(props.plst.playlists !=undefined){
             if(video.id==props.match.params.id)
             {
                 myvideo=video;
+                playlistname=element.name;
+                playlistid=element.id;
             }
         });
         });
@@ -168,7 +172,7 @@ if(props.plst.playlists !=undefined){
                         </h1>
                         <div class="playlist_and_duration">
                             <span class="video_duration">{GetVideoDuration(videoduration)}</span>
-                            <a class="playlist_name" href="/playlist-free-4k-4k-hdr-videos-1">FREE 4K &amp; 4K HDR Videos</a>
+                            <a class="playlist_name" href={"/playlist/"+playlistid}>{playlistname}</a>
                         </div>
                         <div>
                             <p id="the_desc">
