@@ -12,6 +12,7 @@ import {SITENAME} from '../componets/sitename/sitename';
 import HowItWorks from './howItWorks/howItWorks';
 import Policy from './policy/policy';
 import Terms from './terms/terms';
+import FAQ from './faq/faq';
 
 export default function Pl() {
 
@@ -115,6 +116,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/terms'  render={(props) => (
                             <Terms {...props}  />
+            )} />
+            <Route exact path='/faq'  render={(props) => (
+                            <FAQ {...props}  />
             )} />
         </Router>
     )
