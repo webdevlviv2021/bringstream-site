@@ -3,8 +3,8 @@ import React from 'react';
 const FAQ = () => {
     return (
         <React.Fragment>
-            <section class="faq" />
-<div class="container" />
+            <section class="faq" >
+<div class="container" >
 <h2>FAQ</h2>
 
 <div class="message">
@@ -270,7 +270,9 @@ You can change the following settings<br/><br/>
 This will pair your account with the 4K Nature Relax TV app on your TV and you will be automatically signed in to your app.
     </p>
     </li>
-
+<li>
+<input type="checkbox" checked="" />
+    <i></i>
 <h4>How do I watch on my Android TV?</h4>
     <p> If you have a Sony Bravia, you can sign in to 4K Nature Relax TV app on your TV:<br/><br/>
 1. Sign in with your email that you've used for registration in 4krelax.com website and start watching videos.
@@ -355,7 +357,7 @@ Chromecast:
     <input type="checkbox" checked="" />
     <i></i>
     <h4>How do I adjust the volume in the web video player?</h4>
-    <p>Ahh…sweet, sweet sound. The ultimate enhancer to most of our visual experiences, wouldn’t you agree? Of course you do! That’s why you’re here. <br>
+    <p>Ahh…sweet, sweet sound. The ultimate enhancer to most of our visual experiences, wouldn’t you agree? Of course you do! That’s why you’re here. <br/>
 So let’s jump right into showing you how to control the volume on our nifty web video player!
 <br/><br/>
 
@@ -513,7 +515,7 @@ If you need to manage your subscription options or unsubscribe, please see this 
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Sorry to see you go! If you subscribed via the 4K Nature Relax TV iOS app and want to cancel, you have to do so manually via the instructions from Apple here:<br/><br/>
 
-<a href="https://support.apple.com/en-us/HT202039#iOS" target="_blank">https://support.apple.com/en-us/HT202039#iOS</a>.<br><br>
+<a href="https://support.apple.com/en-us/HT202039#iOS" target="_blank">https://support.apple.com/en-us/HT202039#iOS</a>.<br/><br/>
 
 Note: We are not able to cancel this for you. You must do it from your end.
     </p>
@@ -527,7 +529,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
     <input type="checkbox" checked="" />
     <i></i>
     <h4>How Do I Login &amp; Watch with the Apple TV App?</h4>
-    <p>Here are the steps to install a tvOS app on your Apple TV if you are already a subscriber:<br><br>
+    <p>Here are the steps to install a tvOS app on your Apple TV if you are already a subscriber:<br/><br/>
 
 1. Turn on your Apple TV (4th Generation) and open the App Store.<br/>
 2. Search for 4K Nature Relax TV.<br/>
@@ -647,13 +649,13 @@ Note: We are not able to cancel this Roku subscription for you. You will need to
     <input type="checkbox" checked="" />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
-    <p>Sorry to see you go! Since you subscribed via the 4K Nature Relax TV Android app, you will need to manually cancel on Google Payments, like instructed here: <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1" target="_blank">https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1</a>. If you have trouble canceling there, try here as well: <a href="https://play.google.com/store/account" target="_blank">https://play.google.com/store/account</a>.<br/><br> 
+    <p>Sorry to see you go! Since you subscribed via the 4K Nature Relax TV Android app, you will need to manually cancel on Google Payments, like instructed here: <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1" target="_blank">https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1</a>. If you have trouble canceling there, try here as well: <a href="https://play.google.com/store/account" target="_blank">https://play.google.com/store/account</a>.<br/><br/> 
 Note: We are not able to cancel this Android subscription for you. You will need to do it from your end manually.
     </p>
     </li>
 
     <li>    
-    <input type="checkbox" checked="" >
+    <input type="checkbox" checked="" />
     <i></i>
     <h4>How Do I Subscribe Within the Android App?</h4>
     <p>If you are NOT a subscriber and want to subscribe to 4K Nature Relax TV with your Google Play account in the 4K Nature Relax TV app, follow these steps:<br/><br/> 
@@ -725,7 +727,7 @@ Note: We are not able to cancel this Amazon subscription for you. You will need 
 <br/>
 <br/>
 </section>
-        <React.Fragment/>
+        </React.Fragment>
     )
 }
 

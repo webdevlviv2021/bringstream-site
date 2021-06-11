@@ -1472,7 +1472,7 @@ section.how li {
 
 .item-style-lock:after { 
     font-family: FontAwesome;
-    content: url('https://api.iconify.design/fa:lock.svg?height=25&color=white');
+    content: "\f023";
     position: absolute;
     color: #fff;
     left: 14px;
@@ -1484,6 +1484,7 @@ section.how li {
 }
 .item-style-play:after{
     font-family: FontAwesome;
+    content: "\f01d";
     /* content: url('https://api.iconify.design/fa-play-circle-o.svg?height=30&color=white');*/
     position: absolute;
     color: #fff;
@@ -1871,6 +1872,10 @@ p {
     margin: 80px 0 40px 0;
 }
 .video-up a {
+    color: #c4d700; /*created terry*/
+}
+
+.video-up a:hover{
     color: #c4d700; /*created terry*/
 }
 

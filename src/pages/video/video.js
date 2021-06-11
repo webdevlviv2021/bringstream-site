@@ -21,6 +21,7 @@ const GetVideoDuration = (seconds)=>
           date.setSeconds(seconds); // specify value for SECONDS here
 
         let itemtime = date.toISOString().substr(11, 8);
+        if(itemtime.charAt(0)=="0") itemtime= itemtime.substring(1);
         return itemtime;
 }
 const GetVideoStarted = async(data)=>{
@@ -130,6 +131,9 @@ var myvideo;
     var description;
     var playlistname;
     var playlistid;
+    var playlistobject;
+    var copyplaylistobject;
+    var upnextvideos=[];
 console.log(myvideo);
 if(props.plst.playlists !=undefined){
         props.plst.playlists.forEach(element => {
@@ -139,9 +143,21 @@ if(props.plst.playlists !=undefined){
                 myvideo=video;
                 playlistname=element.name;
                 playlistid=element.id;
+                playlistobject=element;
             }
         });
         });
+if(playlistobject!=undefined &&playlistobject!=null  )
+{
+copyplaylistobject=playlistobject;
+
+         playlistobject.videos.forEach( video => {
+                if(video.id!=props.match.params.id)  upnextvideos.push(video);
+         });
+
+                 upnextvideos.sort(() => Math.random() - 0.5);
+}
+
 }
         var title;
 
@@ -215,6 +231,32 @@ if(props.plst.playlists !=undefined){
                             </ul>
                         </div>
                   </div>
+
+                  <div className="col-lg-12">
+                        <h5 className="video-up">UP Next in <a href={"/playlist/"+playlistid}>{playlistname}</a></h5>
+                  </div>
+
+                  {upnextvideos.slice(-3).map(video => {
+                    return(  <div className="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div className="item item-pl">
+                                <a href={"/video/"+video.id}>
+                                    <div className="c-item-style item-style-play">
+                                        <img id="thumb_0" src={video.pictures[600]} alt=""/> 
+                                        <div className="marks"><div className="free"></div></div></div>
+                                    <div class="c-item-info row justify-content-between">
+                                        <div className="col-8"><p id="name_0" className="cir-st1">{video.name}</p></div>
+                                        <div className="col-4 c-item-info-st2"><p id="dur_0" className="cir-st2"> {GetVideoDuration(video.duration)}</p></div>
+                                    </div>
+                                </a>
+                            </div>
+                     </div>)
+                  })}
+                  
+                        <div className="col-lg-12 bottom-show bottom-show-video">
+                        <a href="/subscription">Start free trial!</a>
+                        <p className="hide-when-logged">Or</p>
+                        <a href="/login" className="hide-when-logged">Sign in</a>
+                    </div>
             </div>
         </div>
       </section>

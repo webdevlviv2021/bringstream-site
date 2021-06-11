@@ -61,6 +61,7 @@ if(playlists.plst.playlists!=undefined)
           date.setSeconds(item.duration); // specify value for SECONDS here
 
         let itemtime = date.toISOString().substr(11, 8);
+        if(itemtime.charAt(0)=="0") itemtime= itemtime.substring(1);
     return (<div style={{margin:"10px"}} className="col-12 col-sm-6 col-md-6 col-lg-4" >
       <div className="item item-pl">
         <a href={itemlink}>
