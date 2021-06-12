@@ -19,7 +19,7 @@ const Footer = () => {
                          <li><a href="policy">Privacy Policy</a></li>
                          <li><a href="terms">Term of Use</a></li>
                          <li><a href="license">Custom License</a></li>
-                         <li><a href="business">For Bussines</a></li>
+                         <li><a href="solution">For Bussines</a></li>
                          <li><a href="support">Support</a></li>
                          <li><a href="subscription">Prices</a></li>
                          <li><a href="faq">FAQ</a></li>

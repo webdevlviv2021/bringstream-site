@@ -13,6 +13,7 @@ import HowItWorks from './howItWorks/howItWorks';
 import Policy from './policy/policy';
 import Terms from './terms/terms';
 import FAQ from './faq/faq';
+import Solution from './solution/solution';
 
 export default function Pl() {
 
@@ -119,6 +120,9 @@ formData.append('signature',signature);
             )} />
             <Route exact path='/faq'  render={(props) => (
                             <FAQ {...props}  />
+            )} />
+            <Route exact path='/solution'  render={(props) => (
+                            <Solution {...props}  />
             )} />
         </Router>
     )

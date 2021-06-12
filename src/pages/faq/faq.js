@@ -4,10 +4,10 @@ const FAQ = () => {
     return (
         <React.Fragment>
             <section class="faq" >
-<div class="container" >
+<div className="container" >
 <h2>FAQ</h2>
 
-<div class="message">
+<div className="message">
 <p>ARE YOU HAVING PROBLEMS USING 4K NATURE RELAX TV?  Please drop us a line 
     <a href="mailto:support@4krelax.com">support@4krelax.com</a></p>
 </div>
