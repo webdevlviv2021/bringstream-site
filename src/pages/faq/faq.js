@@ -3,12 +3,12 @@ import React from 'react';
 const FAQ = () => {
     return (
         <React.Fragment>
-            <section class="faq" >
+            <section className="faq" >
 <div className="container" >
 <h2>FAQ</h2>
 
 <div className="message">
-<p>ARE YOU HAVING PROBLEMS USING 4K NATURE RELAX TV?  Please drop us a line 
+<p>ARE YOU HAVING PROBLEMS USING 4K NATURE RELAX TV?  Please drop us a line &nbsp;
     <a href="mailto:support@4krelax.com">support@4krelax.com</a></p>
 </div>
 
@@ -16,20 +16,20 @@ const FAQ = () => {
 
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox"  />
     <i></i>
     <h4>I paid, but never got an email to watch!</h4>
     <p>Sorry about that! Please try logging in with your email address to access 4K Nature Relax TV video content. If you're having trouble, contact us! <a href="mailto:support@4krelax.com">support@4krelax.com</a></p>
     </li>
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I cancel my subscription (unsubscribe)?</h4>
     <p>You can cancel your subscription on the account settings page. When you cancel, your video access will exist until the next charging cycle, but you will not be further charged.</p>
     </li>
 
     <li>
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I redeem a coupon/promo code?</h4>
     <p>You can do this on the checkout page.<br/>
@@ -38,7 +38,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>My payment failed. What do I do now?</h4>
     <p>Sorry about that! We recommend immediately contacting us <a href="mailto:support@4krelax.com">support@4krelax.com</a> so we can take a look at what happened. Please do not try the purchase process again. If you are using a UK debit card and it is getting declined, you may need to contact your bank to ask them why. Sorry again!
@@ -46,7 +46,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>I'm getting the "code already redeemed" error.</h4>
     <p>Sorry for the issues! It's likely that you have redeemed the code already by clicking the link once and inputting your email address. If you've already redeemed, you should receive another separate email from us that contains a link to watch. Let us know if you have further issues!
@@ -54,7 +54,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>When do I get charged each month for a subscription?</h4>
     <p>Subscriptions get charged on the same day each month that you have subscribed. So, if you first subscribed on March 15th, you would next be charged on April 15th.
@@ -62,7 +62,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>Is buying/subscribing secure?</h4>
     <p>Absolutely! Our credit card processor has been audited by a PCI-certified auditor, and is certified to PCI Service Provider Level 1, the most stringent level of certification available. We enforce HTTPS for all sensitive data on 4K Nature Relax TV, including our public website, the checkout experience, and the user account pages.
@@ -70,7 +70,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I update my credit card?</h4>
     <p>You can edit your credit card any time on the account settings page.
@@ -78,7 +78,7 @@ Enter the coupon/promo code in the "Coupon" field
     </li>
 
     <li>
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I add videos to my watch list?</h4>
     <p>If you find a video you want to watch later, we have a special Watchlist tool that allows you to save videos in your own list. You can add videos to your list 1 of 2 ways:<br/>
@@ -93,7 +93,7 @@ Your List can be accessed from the Watchlist page after you have videos saved so
 
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch videos on my computer?</h4>
     <p>
@@ -104,7 +104,7 @@ Your List can be accessed from the Watchlist page after you have videos saved so
     </li>
 
 <li>    
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch via Chromecast?</h4>
     <p>
@@ -125,7 +125,7 @@ From the 4K Nature Relax TV iOS App (iPad/iPhone)<br/>
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch with my Apple TV?</h4>
     <p>
@@ -148,7 +148,7 @@ Watch all of your 4K nature Relax TV purchases, rentals, and subscriptions with 
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch on my Roku?</h4>
     <p>
@@ -161,14 +161,14 @@ With the free 4K Nature Relax TV Roku channel, you can stream all of your purcha
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch on my iPhone or iPad?</h4>
     <p>Using the free 4K Nature Relax TV iOS app, you can watch all of your 4K Nature Relax TV purchases/subscriptions/rentals.</p>
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>Logging In To The 4K Nature Relax TV iOS App</h4>
     <p>
@@ -181,7 +181,7 @@ With the free 4K Nature Relax TV Roku channel, you can stream all of your purcha
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>Watching Videos With 4K Nature Relax TV iOS App</h4>
     <p>Watching your purchased 4K Nature Relax TV videos on the app is very easy!<br/>
@@ -191,7 +191,7 @@ With the free 4K Nature Relax TV Roku channel, you can stream all of your purcha
     </li>
 
     <li>    
-    <input type="checkbox" checked  />
+    <input type="checkbox" defaultChecked  />
     <i></i>
     <h4>Turning on Subtitles in the 4K Nature Relax TV iOS App</h4>
     <p>
@@ -208,7 +208,7 @@ If you want to watch a video when you aren't connected to wifi or your cell netw
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>Change Account Settings</h4>
     <p>To change your account settings, click the menu icon, and then Account Settings.<br/>
@@ -220,7 +220,7 @@ You can change the following settings<br/><br/>
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I download videos to my iPhone or iPad?</h4>
     <p>If you want to watch a video when you aren't connected to wifi or your cell network, you can choose to sync (download) videos to your iPhone or iPad using the 4K Nature Relax TV iOS app. This is a great tool when watching on an airplane or other places without wifi or network.<br/><br/>
@@ -234,7 +234,7 @@ You can change the following settings<br/><br/>
 
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch on my Android device?</h4>
     <p> Using the free 4K Nature Relax TV Android App, you can login to watch and sync 4K Nature Relax TV videos for offline playback. Here are the steps:<br/><br/>
@@ -247,7 +247,7 @@ You can change the following settings<br/><br/>
     </li>
 
     <li>    
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I download videos to my Android device?</h4>
     <p>  If you want to watch a video when you aren't connected to wifi or your cell network, you can choose to sync (download) videos to your Android device using the 4K Nature Relax TV Android app. This is a great tool when watching on an airplane or other places without wifi or network.<br/><br/>
@@ -260,7 +260,7 @@ You can change the following settings<br/><br/>
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I watch on my smart TV?</h4>
     <p> If you have a Sony Bravia or Samsung Tizen TV, you can sign in to your 4K Nature Relax TV app on your TV using the following steps:<br/><br/>
@@ -271,7 +271,7 @@ This will pair your account with the 4K Nature Relax TV app on your TV and you w
     </p>
     </li>
 <li>
-<input type="checkbox" checked="" />
+<input type="checkbox" defaultChecked />
     <i></i>
 <h4>How do I watch on my Android TV?</h4>
     <p> If you have a Sony Bravia, you can sign in to 4K Nature Relax TV app on your TV:<br/><br/>
@@ -280,7 +280,7 @@ This will pair your account with the 4K Nature Relax TV app on your TV and you w
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>Video playback on my computer is slow, or choppy.</h4>
     <p>
@@ -289,7 +289,7 @@ Sorry to hear this! Please try adjusting the quality/resolution in the web playe
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>I'm having trouble logging in to watch on my computer! </h4>
     <p>So sorry for the trouble! Please try these steps to login:<br/><br/>
@@ -302,7 +302,7 @@ If you did not receive the login email, please contact us <a href="mailto:suppor
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>The video is skipping or lagging! What now?</h4>
     <p>Sorry for the trouble! Here's a list of solutions or devices that should help fix your playback issue: <br/><br/>
@@ -354,7 +354,7 @@ Chromecast:
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I adjust the volume in the web video player?</h4>
     <p>Ahh…sweet, sweet sound. The ultimate enhancer to most of our visual experiences, wouldn’t you agree? Of course you do! That’s why you’re here. <br/>
@@ -378,7 +378,7 @@ Enjoy!
 
 <ul>
 <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I get a refund?</h4>
     <p>Sorry that you want a refund! Please contact us <a href="mailto:support@4krelax.com">support@4krelax.com</a> with as much information you can provide and we'll help you out.
@@ -386,7 +386,7 @@ Enjoy!
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I access all of my purchased content? </h4>
     <p>Easy! Login and visit the the home page to see all of your purchased content where you can watch immediately.
@@ -394,7 +394,7 @@ Enjoy!
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I update my credit card?</h4>
     <p>You can edit your credit card any time on your account settings page.
@@ -402,7 +402,7 @@ Enjoy!
     </li>
  
     <li>    
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I change my login email address?</h4>
     <p>You can change your login email address at any time on your account settings page.
@@ -410,7 +410,7 @@ Enjoy!
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I contact customer support?</h4>
     <p>Most questions can be answered in the help guides, but if you still need to talk to a customer support representative, please read below. <br/>
@@ -428,7 +428,7 @@ You can contact customer support here or by emailings us at <a href="mailto:supp
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How do I get an invoice or receipt of my purchase/subscription?</h4>
     <p>Sorry about this, but the only receipt/invoice we provide is listed at the bottom of your confirmation email that we send when you first purchase/subscribe. You can check that, or <a href="mailto:support@4krelax.com">contact us</a> if you need it resent!
@@ -436,7 +436,7 @@ You can contact customer support here or by emailings us at <a href="mailto:supp
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Login to the iOS App?</h4>
     <p>If you are a subscriber and want to watch on your iPhone or iPad with 4K Nature Relax TV, follow these steps:<br/><br/>
@@ -450,7 +450,7 @@ You can contact customer support here or by emailings us at <a href="mailto:supp
 
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Subscribe in the iOS App?</h4>
     <p>
@@ -467,7 +467,7 @@ If you need to manage your subscription options or unsubscribe, please see this 
 
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Watch in the iOS App?</h4>
     <p>Watching 4K Nature Relax TV videos on the 4K Nature Relax TV app is very easy!<br/><br/>
@@ -482,7 +482,7 @@ If you need to manage your subscription options or unsubscribe, please see this 
 
 
     <li>    
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Download videos to my iPhone or iPad?</h4>
     <p>If you want to watch a video when you aren't connected to wifi or your cell network, you can choose to sync (download) videos to your iPhone or iPad using the 4K Nature Relax TV app. This is a great tool when watching on an airplane or other places without wifi or network.
@@ -497,7 +497,7 @@ If you need to manage your subscription options or unsubscribe, please see this 
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Change the iOS App Settings:</h4>
     <p>To change the iOS app settings, click the menu icon, and then Settings. You can change the following settings:<br/><br/>
@@ -510,7 +510,7 @@ If you need to manage your subscription options or unsubscribe, please see this 
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Sorry to see you go! If you subscribed via the 4K Nature Relax TV iOS app and want to cancel, you have to do so manually via the instructions from Apple here:<br/><br/>
@@ -526,7 +526,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
 <h3>USING THE APPLE TV APP</h3>
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Login &amp; Watch with the Apple TV App?</h4>
     <p>Here are the steps to install a tvOS app on your Apple TV if you are already a subscriber:<br/><br/>
@@ -542,7 +542,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Subscribe in the Apple TV App? </h4>
     <p>Using the 4K Nture Relax TV Apple TV app, you can view the content easily on your TV. Follow these steps to subscribe right within the app:<br/><br/>
@@ -557,7 +557,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
 
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Sorry to see you go! If you subscribed via the 4K Nature Relax TV Apple TV/ tvOS app and want to cancel, you have to do so manually via the instructions from Apple here: <a href="https://support.apple.com/en-us/HT202039" target="_blank">https://support.apple.com/en-us/HT202039</a>.<br/><br/>
@@ -571,7 +571,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
 <h3>USING THE ROKU APP</h3>
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Login On the Roku Channel?</h4>
     <p>Using the 4K Nature Relax TV Roku channel, you can view the content easily on your TV. Follow these steps to login:<br/><br/>
@@ -585,7 +585,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Subscribe in the Roku Channel?</h4>
     <p>Using the 4K Nature Relax TV Roku channel, you can view the content easily on your TV. Follow these steps to subscribe right within the channel:<br/><br/>
@@ -600,7 +600,7 @@ Note: We are not able to cancel this for you. You must do it from your end.
 
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Using the 4K Nature Relax TV Roku channel, you can view the content easily on your TV. Follow these steps to subscribe right within the channel:<br/><br/>
@@ -616,7 +616,7 @@ Note: We are not able to cancel this Roku subscription for you. You will need to
 <h3>USING THE ANDROID APP</h3>
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Login to the Android App?</h4>
     <p> If you are a subscriber and want to watch on your Android device with 4K Nature Relax TV, follow these steps:<br/><br/>
@@ -631,7 +631,7 @@ Note: We are not able to cancel this Roku subscription for you. You will need to
 
 
     <li>    
-    <input type="checkbox" checked />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Download videos to my Android Device?</h4>
     <p>If you want to watch a video when you aren't connected to wifi or your cell network, you can choose to sync (download) videos to your Android device using the 4K Nature Relax TV app. This is a great tool when watching on an airplane or other places without wifi or network.
@@ -646,7 +646,7 @@ Note: We are not able to cancel this Roku subscription for you. You will need to
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Sorry to see you go! Since you subscribed via the 4K Nature Relax TV Android app, you will need to manually cancel on Google Payments, like instructed here: <a href="https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1" target="_blank">https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&amp;oco=1</a>. If you have trouble canceling there, try here as well: <a href="https://play.google.com/store/account" target="_blank">https://play.google.com/store/account</a>.<br/><br/> 
@@ -655,7 +655,7 @@ Note: We are not able to cancel this Android subscription for you. You will need
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Subscribe Within the Android App?</h4>
     <p>If you are NOT a subscriber and want to subscribe to 4K Nature Relax TV with your Google Play account in the 4K Nature Relax TV app, follow these steps:<br/><br/> 
@@ -670,7 +670,7 @@ Note: We are not able to cancel this Android subscription for you. You will need
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Change the Android App Settings?</h4>
     <p>To change the Android app settings, click the menu icon, and then Settings. You can change the following settings:<br/><br/> 
@@ -685,7 +685,7 @@ Note: We are not able to cancel this Android subscription for you. You will need
 <h3>USING THE AMAZON FIRE TV APP</h3>
 <ul>
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Login to the Amazon App?</h4>
     <p> If you are a subscriber and want to watch on your Amazon Fire TV device with 4K Nature Relax TV, follow these steps:<br/><br/>
@@ -699,7 +699,7 @@ Note: We are not able to cancel this Android subscription for you. You will need
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Unsubscribe/Cancel a Subscription?</h4>
     <p>Sorry to see you go! Since you subscribed via the 4K Nature Relax TV Amazon Fire TV app, you will need to manually cancel on Amazon App Store, like instructed here: <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=202011260" target="_blank">https://www.amazon.com/gp/help/customer/display.html?nodeId=202011260</a>.<br/><br/> 
@@ -708,7 +708,7 @@ Note: We are not able to cancel this Amazon subscription for you. You will need 
     </li>
 
     <li>    
-    <input type="checkbox" checked="" />
+    <input type="checkbox" defaultChecked />
     <i></i>
     <h4>How Do I Subscribe Within the Amazon Fire TV App?</h4>
     <p>If you are NOT a subscriber and want to subscribe to 4K Nature Relax TV with your Amazon account in the 4K Nature Relax TV app, follow these steps:<br/><br/> 
