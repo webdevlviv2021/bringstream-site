@@ -19,13 +19,11 @@ const Business = () => {
                     </div>
                 </div>
                 <span></span>
-                {/* <video className="you" autoplay playsinline loop>
-                <source src="https://player.vimeo.com/external/422874793.hd.mp4?s=5c3ceefbf37e86c5777eeaf5c6830144852fc863&profile_id=175" type="video/mp4" >
-                </video> */}
+                <video className="you" autoplay playsinline loop>
+                <source src="https://player.vimeo.com/external/422874793.hd.mp4?s=5c3ceefbf37e86c5777eeaf5c6830144852fc863&profile_id=175" type="video/mp4" />
+                </video>
             <img src="image/slide_04.jpg" alt="" />
             </div>
-
-            
         </React.Fragment>
     )
 }
