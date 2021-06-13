@@ -1,18 +1,23 @@
 import React from 'react';
 
 const OwlCarouselVideoItems = (props) => {
-   console.log(props.videos);
+   console.log("OwlCarouselVideoItems Videos",props.videos);
    return <React.Fragment>{props.videos.map((item) => {
-       var itemstyle = true ? 'item-style-lock':'item-style-play';
+       var itemstyle = props.free==0 ? 'item-style-lock':'item-style-play';
+       var itemnew = true ? '<div class="new"></div>':'';
+       var itemhdr = item.hdr==0 ? '<div class="hdr"></div>':'';
        let itemlink = "video/"+item.id;
        let date = new Date(0);
         date.setSeconds(item.duration); // specify value for SECONDS here
 
        let itemtime = date.toISOString().substr(11, 8);
+
+        if(itemtime.charAt(0)=="0") itemtime= itemtime.substring(1);
+
     return  <div key={item.id} className="item">
                                 <a href={itemlink}>
                                     <div className={"c-item-style " + (itemstyle)}>
-                                        <div className="marks"><div className="new"></div></div>
+                                        <div className="marks" dangerouslySetInnerHTML={{__html: (itemnew+itemhdr)}}></div>
                                         <img src={item.pictures['600']} alt={item.name}/> 
                                     </div>
                                     <div className="c-item-info  row justify-content-between">

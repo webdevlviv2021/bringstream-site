@@ -12,7 +12,7 @@ console.log(playlists);
     const listItems = 
     playlists.playlists.playlists.map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
-    return <PlaylistCarouselSecond link={link} playlistname={name} videos={videos}/>
+    return <PlaylistCarouselSecond link={link} playlistname={name} videos={videos} free={free} premium={premium} duration={duration}/>
 });
 
     return (

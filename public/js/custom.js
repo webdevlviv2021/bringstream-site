@@ -93,12 +93,12 @@ console.log(slideIndexExplore);
    
     
     
-    $("body").on('click', 'a.fps-slide',
+    $("body").on('click', '.fpslide',
              (ev)=>{
+
                 var t=$(ev.currentTarget), d;
-                $("a.fps-slide").removeClass("cb-active");
-                t.addClass("cb-active");
-                var a = t.attr("href");
+          
+                var a = t.attr("picture");
                 $(".free-preview").css("backgroundImage", "url(" + a + ")");
                 $("#free_preview_name").text(t.attr('title'));
                 $("#free_preview_duration").text(t.attr('duration'));
@@ -107,7 +107,7 @@ console.log(slideIndexExplore);
                 return false;
             }
     );
-    $("a.fps-slide").first().click();
+   
 
     $('section.free-preview .owl-carousel').on('changed.owl.carousel', (ev) => {
         if (ev.page.size === 1) {
@@ -256,10 +256,9 @@ var owl2 = $('.owl-carousel-c-second');
     var owl4 = $('.owl-carousel-c-fourth');
     owl4.owlCarousel({
         nav:true,
-        center:false,
+        loop:true,
         items:4,
-        loop: true,
-        slideBy:2,
+        slideBy:1,
         margin: 10,
         responsiveClass: true,
          responsive: {

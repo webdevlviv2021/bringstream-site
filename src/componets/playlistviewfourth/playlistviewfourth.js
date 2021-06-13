@@ -5,13 +5,12 @@ const PlaylistViewFourth = (playlists) => {
     const $=window.jQuery;
  if(playlists instanceof Object && playlists.playlists instanceof Array && playlists.playlists.length>0 && playlists.playlists[0].playlists instanceof Array)
     {
-    const listItems =playlists.playlists[0].playlists.slice(-1).map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
+    const listItems =playlists.playlists[0].playlists.slice(1,2).map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
     $('.owl-carousel-c-fourth').owlCarousel({nav:true,
-                center:true,
                 items:4,
                 loop: true,
-                slideBy:2,
+                slideBy:1,
                 margin: 10,
                 responsiveClass: true,
                 responsive: {

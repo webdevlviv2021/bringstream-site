@@ -5,9 +5,11 @@ const GetVideoDuration = (seconds)=>
           date.setSeconds(seconds); // specify value for SECONDS here
 
         let itemtime = date.toISOString().substr(11, 8);
+         if(itemtime.charAt(0)=="0") itemtime= itemtime.substring(1);
         return itemtime;
 }
 const OwlCarouselVideoItemsSmall = (props) => {
+    console.log("OwlCarouselVideoItemsSmall props",props);
    function handleClick(name,link,img,duration,ev){
        console.log(ev);
        document.getElementById("free_preview_name").innerHTML=name;
@@ -32,7 +34,9 @@ const OwlCarouselVideoItemsSmall = (props) => {
             "background-image: url('"+item.pictures["600"]+"'); display: block;"
             );
        }
-    return  <div key={item.id} className="item" onClick={(e) => handleClick(item.name,itemlink,item.pictures["600"],item.duration, e)}>
+    return  <div key={item.id} className="item fpslide" onClick={(e) => handleClick(item.name,itemlink,item.pictures["600"],item.duration, e)}
+            video_url={itemlink} title={item.name} picture={item.pictures["600"]} duration={GetVideoDuration(item.duration)} description={props.playlistname}
+    >
                               
                                     <div className={"c-item-style"}>
                                         <div className="marks"><div className="free"></div></div>

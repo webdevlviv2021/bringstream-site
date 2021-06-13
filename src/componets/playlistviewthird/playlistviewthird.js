@@ -21,7 +21,7 @@ const $=window.jQuery;
     playlists.playlists[0].playlists.slice(0,1).map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
     name="Newest uploads";
-        $('.owl-carousel-c-fourth').owlCarousel({nav:true,
+        $('.owl-carousel-c-third').owlCarousel({nav:true,
                 center:true,
                 items:4,
                 loop: true,

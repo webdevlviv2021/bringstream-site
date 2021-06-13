@@ -21,7 +21,7 @@ const NewestUploads = ({link,playlistname,videos}) => {
                         </div>
                         <div></div>
                     </div>
-                            <OwlCarousel className='owl-carousel-c-fourth videos-list owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
+                            <OwlCarousel className='owl-carousel-c-third videos-list owl-loaded owl-drag' loop margin={10} nav  responsive={true} >
                             <OwlCarouselVideoItems items={videos.length} videos={videos} />
         
                             </OwlCarousel>
