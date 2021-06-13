@@ -15,7 +15,7 @@ const Footer = () => {
 
                     <ul className="footer-menu">
                          <li className="active"><a href="/">Home</a></li>
-                         <li><a href="how">How it Works</a></li>
+                         <li><a href="howitWorks">How it Works</a></li>
                          <li><a href="policy">Privacy Policy</a></li>
                          <li><a href="terms">Term of Use</a></li>
                          <li><a href="license">Custom License</a></li>
