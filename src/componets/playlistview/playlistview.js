@@ -10,7 +10,7 @@ console.log(playlists);
 
   if(Object.keys(playlists.playlists.playlists).length===0){ return(<div>Nothing found</div>)};
     const listItems = 
-    playlists.playlists.playlists.map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
+    playlists.playlists.playlists.slice(0,3).map( ( {id,name,description,duration,premium,free,pictures,videos} ) => {
     let link = "playlist/"+id;
     return <PlaylistCarousel link={link} playlistname={name} videos={videos} free={free} premium={premium} duration={duration}/>
 });
