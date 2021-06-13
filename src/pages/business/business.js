@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Solution = () => {
+const Business = () => {
     return (
         <React.Fragment>
     <div className="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide00" style={{"width": "1519px"}} />
@@ -30,4 +30,4 @@ const Solution = () => {
     )
 }
 
-export default Solution;
+export default Business;
