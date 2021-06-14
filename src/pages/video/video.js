@@ -226,7 +226,7 @@ copyplaylistobject=playlistobject;
                                 <li><a href="https://itunes.apple.com/us/app/4k-nature-relax-tv/id1403683336?mt=8" target="_blank" rel="nofollow"><i className="fa fa-apple"></i></a></li>
                                 <li><a href="https://play.google.com/store/apps/details?id=xyz.gameoff.relaxation" target="_blank" rel="nofollow"><i className="fa fa-android"></i></a></li>
                                 <li><a href="https://www.amazon.com/Pro-Art-inc-Nature-Relax/dp/B074MC1G9X" target="_blank" rel="nofollow"><i className="fa fa-amazon"></i></a></li>
-                                <li><a href="#"><i className="fa fa-chrome"></i></a></li>
+                                <li><a href={"/video/"+props.match.params.id}><i className="fa fa-chrome"></i></a></li>
                                 <li><a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><img src="/img/roku-logo.png" alt="roku-app"/></a></li>
                             </ul>
                         </div>
