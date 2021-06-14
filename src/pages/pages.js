@@ -17,9 +17,10 @@ import Business from './business/business';
 
 export default function Pl() {
 
-    const [playlists, setPlaylists] = React.useState([]);
-    const [isLoggedin, setIsLoggedIn] = React.useState(true);
-
+ const [playlists, setPlaylists] = React.useState([]);
+    
+ const isLoggedin = localStorage.getItem('loggedin') === 'true';
+ const useremail = isLoggedin ? localStorage.getItem('useremail') : '';
   React.useEffect(async() => {
       const GetPlaylistsArray = async(data)=>{
         let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
