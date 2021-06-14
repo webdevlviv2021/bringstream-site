@@ -6,27 +6,26 @@ const HowItWorks = () => {
     return (
         <React.Fragment>
             <div id="slides" 
-            style={{"position": "absolute", "overflow": "hidden", "width": "100%", "height": "458px"}} />
+            style={{"position": "absolute", "overflow": "hidden", "width": "100%", "height": "458px"}} >
     <div className="slides-control" 
-        style={{"position": "absolute", "height": "100%", "width": "1519px", "left": "-1519px"}} />
+        style={{"position": "absolute", "height": "100%", "width": "1519px"}} >
         <ul className="slides-container" 
-        style={{"margin": "0px", "padding": "0px", "list-style": "none", "position": "relative", "height": "100%", "display": "block"}} />
-        <li style={{"display": "block", "left": "1519px", "position": "absolute", "overflow": "hidden", "height": "100%", "width": "1519px", "top": "0px", "z-index": "2", 
-        "opacity": "1"}} />
+        style={{"margin": "0px", "padding": "0px", "list-style": "none", "position": "relative", "height": "100%", "display": "block"}} >
+        <li style={{"display": "block", "left": "1519px", "position": "absolute", "overflow": "hidden", "height": "100%", "width": "1519px", "top": "0px", "z-index": "2",         "opacity": "1"}} >
         <img src="img/africa-bg.jpg" alt="africa video presentacion" />
 
-    <div className="content-slides content-slides-video" 
-        style={{"background-image": "url('image/africa-bg.jpg')", "background-size": "cover"}} />
-            <div className="container" />
-            <div className="aligner slides-video-s" />
-            <div className="aligner-video" />
+    <div className="content-slides content-slides-video content-slides-image">
+            <div className="container" >
+            <div className="aligner slides-video-s" >
+            <div className="aligner-video" >
             <iframe src="https://player.vimeo.com/video/265787071?title=0&amp;byline=0&amp;portrait=0" width="853" height="480" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-        <div className="box-inf-v" />
+        <div className="box-inf-v" >
                     <a className="box-i-star" href="subscription">GET ONE MONTH FREE</a>
                     <a className="box-i-more" href="business">SOLUTION FOR YOUR BUSINESS</a>
-        
-                
-
+        </div></div></div></div></div>
+        </li>  
+        </ul>   
+</div></div>
         <div class="h-sub-texts">
     <div class="h-col-2">
         <h5>Get access to all {EXPANDED_SITENAME3} content</h5>

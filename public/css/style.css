@@ -3449,6 +3449,11 @@ button, input, optgroup, select, textarea {
     background-color: #333;
 }
 
+.content-slides-image{
+   background-image: url('img/africa-bg.jpg');
+   background-size: "cover";
+}
+
 
 
 

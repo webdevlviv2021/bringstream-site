@@ -18,7 +18,7 @@ import Business from './business/business';
 export default function Pl() {
 
     const [playlists, setPlaylists] = React.useState([]);
-    const [isLoggedin, setIsLoggedIn] = React.useState(false);
+    const [isLoggedin, setIsLoggedIn] = React.useState(true);
 
   React.useEffect(async() => {
       const GetPlaylistsArray = async(data)=>{
@@ -91,7 +91,7 @@ formData.append('signature',signature);
     let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?"+action;
       //const logindata ={"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}};
     let formData = new FormData();
-    let jsonData ='{"emailLogin":{"email":"dk@itf-ua.org","password":"&Px5foU7J[$g2[^"}}';
+    let jsonData ='{"emailLogin":{"email":"dk@itf-ua.org"}}';
     let signature= sha1(action+privateKey+jsonData)
 formData.append('jsonData',jsonData);
 formData.append('signature',signature);
@@ -116,7 +116,13 @@ formData.append('signature',signature);
     console.log("error", error);
   });
   }
+  if(isLoggedin){
       GetLogin();
+      }
+      else 
+      {
+        GetLoginAnonymous();
+      }
   },[]);
 
     return (
