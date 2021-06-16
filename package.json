@@ -1,6 +1,5 @@
 {
   "name": "4krelax-proj",
-  "homepage":"https://4krelax.bringstream.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
