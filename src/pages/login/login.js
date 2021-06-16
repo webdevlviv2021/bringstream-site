@@ -2,7 +2,28 @@ import React from 'react';
 import {EXPANDED_SITENAME} from '../../componets/sitename/sitename';
 
 const Login = () => {
+
 document.body.classList.add('loginpage');
+
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+const $=window.jQuery;
+const submitHandleClick = event => {
+    event.preventDefault();
+    if(emailRegex.test($('#useremailinput').val()))
+    {
+        $('#loginform').children().first().attr('style',  'display:none');
+        $('.loginformsuccess').attr('style',  'display:block');
+     }
+    
+};
+
+const handleResend = event => {
+  event.preventDefault();
+  localStorage.setItem('useremail',$('#useremailinput').val());
+  localStorage.setItem('loggedin',true);
+    window.location.href='/explore';
+    
+};
     return (
         <React.Fragment>
         <div className="darkfullwidth darkfullwidth2">
@@ -92,8 +113,8 @@ document.body.classList.add('loginpage');
         <form id="loginform" className="formWhiteOnBlack formVertical" >
             <div className="loginform subscriptiontab" style={{"display": "block"}} >
                 <h3>Login to <span>{EXPANDED_SITENAME}</span></h3>
-                <div className="div-p"><input type="text" className="user-email" name="email" placeholder="Email Address" required="true" pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" /></div>
-                <div className="div-p"><input type="submit" value="Login" /></div>
+                <div className="div-p"><input id="useremailinput" type="text" className="user-email" name="email" placeholder="Email Address" required="true" pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" /></div>
+                <div className="div-p"><input type="submit" value="Login" onClick={submitHandleClick} /></div>
                 <div className="div-p">
                     <div className="hr-half" ><hr/></div>
                     <div className="hr-or">OR</div>
@@ -125,7 +146,7 @@ document.body.classList.add('loginpage');
         <div className="loginformsuccess subscriptiontab formWhiteOnBlack" style={{"display": "none"}}>
             <h3>We have sent you a <span>LOG IN LINK</span></h3>
             <div className="div-p">Check your inbox and click on the green button provided to LOG IN to your account.</div><br/>
-            <div className="div-p"><input type="submit" id="resend" value="Resend email" />
+            <div className="div-p"><input type="submit" id="resend" value="Resend email" onClick={handleResend}/>
                 </div>     
             <div className="div-p">Check your spam or junk folder if you don't see the email.
             </div>

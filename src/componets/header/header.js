@@ -5,6 +5,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 //import { Explore} from "../../pages/explore/explore4k";
 const Header = () => {
+    const handleClick = event => {
+  event.preventDefault();
+  localStorage.setItem('loggedin',false);
+  localStorage.setItem('useremail','');
+  window.location.href='/';
+    
+};
+    const isLoggedin = localStorage.getItem('loggedin') === 'true';
+    const useremail = isLoggedin ? localStorage.getItem('useremail') : '';
     const inIframe = window.self!==window.top;
     const hideIframeHeader = !inIframe ?"":"displayiframeheader"
     return (
@@ -39,13 +48,36 @@ const Header = () => {
                 <a href="https://channelstore.roku.com/en-gb/details/268607/4k-nature-relax-tv" target="_blank" rel="nofollow"><img src="/img/roku-logo.png" alt="roku-app"/></a>
             </span>
         </div>
-                
+          {isLoggedin?(
+            <div class="more-inform my-2 my-lg-0">
+                <div class="avalid-social mr-auto">
+                    <a href="#" class="bottom-smart">
+                        <p> <span class="user_name_in_header_hello">Hello</span><span id="user_name_in_header">Customer</span></p>
+                    </a>
+                </div>
+            </div>)
+            :
+            (
+                <React.Fragment></React.Fragment>
+            )}    
         <div className="more-inform my-2 my-lg-0">
+        {isLoggedin?(
+        <React.Fragment>
+                <a href="/personal-data" class="sign-in" id="personal">Settings</a>
+                <a href="/faq" class="sign-in" id="faq">FAQ</a>
+                <a href="/logout" class="sign-in" id="logout" onClick={handleClick}>Logout</a> 
+        </React.Fragment>
+        ):
+        (
+        <React.Fragment>
                 <a href="subscription" className="bottom-smart" id="navBarStartTrial">
                     <i className="fa fa-play-circle"></i>
                     <span>Start free trial!</span>
                 </a>
                 <a href="login" className="sign-in">Log in</a>
+            </React.Fragment>   
+        )
+            }
         </div>
             </div>
         </nav>

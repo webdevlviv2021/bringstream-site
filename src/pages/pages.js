@@ -9,17 +9,18 @@ import Subscribe from '../pages/subscribe/subscribe';
 import Login from '../pages/login/login';
 import sha1 from 'crypto-js/sha1';
 import {SITENAME} from '../componets/sitename/sitename';
-import HowItWorks from './howItWorks/howItWorks';
-import Policy from './policy/policy';
-import Terms from './terms/terms';
-import FAQ from './faq/faq';
-import Business from './business/business';
+import HowItWorks from '../pages/howItWorks/howItWorks';
+import Policy from '../pages/policy/policy';
+import Terms from '../pages/terms/terms';
+import FAQ from '../pages/faq/faq';
+import Business from '../pages/business/business';
 
 export default function Pl() {
 
-    const [playlists, setPlaylists] = React.useState([]);
-    const [isLoggedin, setIsLoggedIn] = React.useState(true);
-
+ const [playlists, setPlaylists] = React.useState([]);
+    
+ const isLoggedin = localStorage.getItem('loggedin') === 'true';
+ const useremail = isLoggedin ? localStorage.getItem('useremail') : '';
   React.useEffect(async() => {
       const GetPlaylistsArray = async(data)=>{
         let queryString = "https://"+SITENAME+".bringstream.com/Engine/apic/apic.php?action=GetPlaylists&openKey="+data.aOpenKey;
